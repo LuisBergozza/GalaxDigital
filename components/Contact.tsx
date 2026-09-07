@@ -47,7 +47,7 @@ export const Contact: React.FC = () => {
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
-    <section id="contato" className="py-16 md:py-24 relative overflow-hidden">
+    <section id="contato" className="py-16 md:py-24 relative overflow-hidden scroll-mt-24">
       {/* Dynamic Background */}
       <div className="absolute top-0 left-0 w-full h-full -z-10">
           <div className="absolute top-1/4 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-primary/20 rounded-full blur-[80px] md:blur-[120px] animate-pulse"></div>
@@ -101,8 +101,8 @@ export const Contact: React.FC = () => {
 
             <div className="relative bg-[#0A0A0A]/80 backdrop-blur-xl border border-white/10 rounded-2xl md:rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden">
 
-              {/* Decorative noise texture */}
-              <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] pointer-events-none"></div>
+              {/* Decorative noise texture (CSS puro, sem dependência externa) */}
+              <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.35) 1px, transparent 1px)', backgroundSize: '4px 4px' }}></div>
 
               {/* WhatsApp Card Content */}
               <div className="relative z-10 flex flex-col items-center justify-center text-center min-h-[400px] md:min-h-[500px]">

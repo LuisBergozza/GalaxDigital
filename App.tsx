@@ -18,6 +18,14 @@ const App: React.FC = () => {
 
   useEffect(() => {
     window.localStorage.setItem('galax-theme', isLightMode ? 'light' : 'dark');
+    document.documentElement.style.colorScheme = isLightMode ? 'light' : 'dark';
+    let meta = document.querySelector('meta[name="theme-color"]');
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.setAttribute('name', 'theme-color');
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', isLightMode ? '#f7f7fb' : '#050505');
   }, [isLightMode]);
 
   return (

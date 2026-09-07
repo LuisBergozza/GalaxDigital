@@ -3,7 +3,7 @@ import { TrendingUp, Zap, ShieldCheck, PieChart, ArrowUpRight, Lock } from 'luci
 
 export const Features: React.FC = () => {
   return (
-    <section id="diferenciais" className="py-20 md:py-28 relative overflow-hidden">
+    <section id="diferenciais" className="py-20 md:py-28 relative overflow-hidden scroll-mt-24">
       {/* Background Elements */}
       <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -translate-x-1/2"></div>
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-900/10 rounded-full blur-[120px] translate-x-1/3"></div>

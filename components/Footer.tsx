@@ -54,6 +54,10 @@ export const Footer: React.FC<FooterProps> = ({ isLightMode = false }) => {
               <img
                 src={isLightMode ? '/logo preta.png' : '/logo completa.png'}
                 alt="Galax Digital"
+                loading="lazy"
+                decoding="async"
+                width={160}
+                height={40}
                 className="h-10"
               />
             </a>

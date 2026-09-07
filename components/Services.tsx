@@ -79,7 +79,7 @@ const services: ServiceItem[] = [
 
 export const Services: React.FC = () => {
   return (
-    <section id="servicos" className="py-20 md:py-28 relative bg-[#050505]">
+    <section id="servicos" className="py-20 md:py-28 relative bg-[#050505] scroll-mt-24">
       <div className="container mx-auto px-6 sm:px-8 md:px-10 lg:px-12">
         <div className="flex flex-col lg:flex-row gap-16">
 
@@ -96,7 +96,11 @@ export const Services: React.FC = () => {
                 <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10"></div>
                 <img
                   src="/imagem.png"
-                  alt="Equipe analisando dados"
+                  alt="Equipe da Galax Digital analisando dados de performance"
+                  loading="lazy"
+                  decoding="async"
+                  width={640}
+                  height={640}
                   className="w-full aspect-square object-contain bg-black/40 transition-transform duration-700 group-hover:scale-105"
                 />
 

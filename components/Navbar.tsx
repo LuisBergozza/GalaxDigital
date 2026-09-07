@@ -19,6 +19,18 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) =>
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsOpen(false);
+    };
+    window.addEventListener('keydown', handleKey);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    return () => {
+      window.removeEventListener('keydown', handleKey);
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   const navLinks = [
     { name: 'Soluções', href: '#servicos' },
     { name: 'Diferenciais', href: '#diferenciais' },
@@ -40,6 +52,8 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) =>
             <img
               src={isLightMode ? '/logo preta.png' : '/logo_navbar.png'}
               alt="Galax Digital"
+              width={160}
+              height={56}
               className={`transition-all duration-500 object-contain block ${scrolled ? 'h-11' : 'h-12 md:h-14'}`}
               style={{ verticalAlign: 'middle' }}
             />
@@ -80,6 +94,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) =>
             className="md:hidden text-white w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition-colors z-50 relative"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Menu"
+            aria-expanded={isOpen}
           >
             {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>

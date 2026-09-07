@@ -10,7 +10,7 @@ export const TargetAudience: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 md:py-28 relative bg-[#050505] overflow-hidden">
+    <section className="py-20 md:py-28 relative bg-[#050505] overflow-hidden scroll-mt-24" id="resultados">
       {/* Background Elements */}
       <div className="absolute right-0 top-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] translate-x-1/2"></div>
 

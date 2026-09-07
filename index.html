@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR" class="scroll-smooth" style="color-scheme: dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -132,6 +132,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#050505">
     <script>
       tailwind.config = {
         theme: {
@@ -185,6 +186,15 @@
       }
     </script>
     <style>
+      /* Respeitar preferência de movimento reduzido */
+      @media (prefers-reduced-motion: reduce) {
+        .animate-blob, .animate-ping, .animate-pulse, .animate-scroll, .animate-scroll-reverse,
+        .hero-orbit, .hero-star, .hero-glow {
+          animation: none !important;
+        }
+        html { scroll-behavior: auto !important; }
+      }
+
       /* Margens laterais mais generosas em todas as seções (sem exagerar no centro) */
       .container {
         max-width: 1320px !important;
