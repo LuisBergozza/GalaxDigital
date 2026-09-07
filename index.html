@@ -667,6 +667,24 @@
         background-color: #ffffff !important;
         color: #17131f !important;
       }
+
+      /* Badge do hero: texto escuro no modo claro */
+      .theme-light [class*="bg-primary/2"][class*="text-white"] {
+        color: #17131f !important;
+      }
+
+      /* Botões primários: texto sempre branco, inclusive no claro */
+      .theme-light button[class*="bg-primary"],
+      .theme-light a > button[class*="bg-primary"] {
+        color: #ffffff !important;
+      }
+
+      /* Textos com degradê (ex: "Método Validado"): degradê mais escuro e legível no claro */
+      .theme-light .text-transparent.bg-clip-text {
+        background-image: linear-gradient(90deg, #5300ff, #6d28d9) !important;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+      }
     </style>
   <script type="importmap">
 {

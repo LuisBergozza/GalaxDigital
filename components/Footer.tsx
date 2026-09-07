@@ -136,7 +136,7 @@ export const Footer: React.FC<FooterProps> = ({ isLightMode = false }) => {
           <div className="text-gray-500 text-center md:text-left flex flex-col md:flex-row gap-1 md:gap-2 text-xs md:text-sm items-center w-full justify-between">
             <span>&copy; {currentYear} Galax Digital. Todos os direitos reservados.</span>
             <span>
-              Designed by <a href="https://stormcore.com.br" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors font-medium">Stormcore</a>
+              Desenvolvido por Galax Digital
             </span>
           </div>
         </div>
