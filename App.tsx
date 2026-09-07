@@ -33,7 +33,7 @@ const App: React.FC = () => {
         <TargetAudience />
         <Contact />
       </main>
-      <Footer />
+      <Footer isLightMode={isLightMode} />
       <FloatingWhatsApp />
     </div>
   );

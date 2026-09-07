@@ -7,8 +7,8 @@ interface SocialButtonProps {
 }
 
 const SocialButton: React.FC<SocialButtonProps> = ({ icon: Icon, href }) => (
-  <a 
-    href={href} 
+  <a
+    href={href}
     className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white hover:border-primary hover:scale-110 hover:shadow-[0_0_15px_rgba(83,0,255,0.4)] transition-all duration-300"
   >
     <Icon size={18} />
@@ -22,8 +22,8 @@ interface FooterLinkProps {
 
 const FooterLink: React.FC<FooterLinkProps> = ({ href, children }) => (
   <li>
-    <a 
-      href={href} 
+    <a
+      href={href}
       className="text-gray-400 hover:text-primary transition-all duration-300 flex items-center gap-2 group"
     >
       <span className="w-0 overflow-hidden group-hover:w-2 transition-all duration-300 h-[2px] bg-primary"></span>
@@ -32,28 +32,32 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, children }) => (
   </li>
 );
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  isLightMode?: boolean;
+}
+
+export const Footer: React.FC<FooterProps> = ({ isLightMode = false }) => {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-black pt-12 pb-8 border-t border-white/5 relative overflow-hidden text-sm">
-      
+
       {/* Background Gradients (Subtle) */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-primary/5 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
 
       <div className="container mx-auto px-6 sm:px-8 md:px-10 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
-          
+
           {/* Column 1: Brand & About (4 cols) */}
           <div className="lg:col-span-4 space-y-6">
             <a href="#" className="flex items-center gap-2 group w-fit">
-              <img 
-                src="/logo completa.png" 
-                alt="Galax Digital" 
+              <img
+                src={isLightMode ? '/logo preta.png' : '/logo completa.png'}
+                alt="Galax Digital"
                 className="h-10"
               />
             </a>
-            
+
             <p className="text-gray-400 leading-relaxed max-w-xs">
               Agência de marketing digital em Concórdia SC e região Oeste Catarinense. Transformamos empresas através de estratégias de tráfego pago, gestão de anúncios e branding para crescimento real.
             </p>
