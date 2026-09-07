@@ -625,8 +625,10 @@
         color: #7a7488 !important;
       }
 
-      /* Grid/logos de parceiros */
-      .theme-light [class*="opacity-"][class*="text-white"] {
+      /* Elementos decorativos/textos com opacidade (não pegar botões, que têm disabled:opacity-50) */
+      .theme-light span[class*="opacity-"][class*="text-white"],
+      .theme-light p[class*="opacity-"][class*="text-white"],
+      .theme-light div[class*="opacity-"][class*="text-white"] {
         color: #4b4655 !important;
       }
 
