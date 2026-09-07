@@ -671,7 +671,7 @@
         background-color: #ffffff !important;
         border-color: rgba(23, 19, 31, 0.12) !important;
       }
-      .theme-light [class*="bg-[#0A0A0A]"] .text-white {
+      .theme-light [class*="bg-[#0A0A0A]"] .text-white:not(button) {
         color: #282234 !important;
       }
       .theme-light .bg-black\/50 {
@@ -694,7 +694,9 @@
          Especificidade maior que a regra global de text-white. */
       .theme-light main button[class*=" bg-primary"],
       .theme-light nav button[class*=" bg-primary"],
-      .theme-light main a > button[class*=" bg-primary"] {
+      .theme-light main a > button[class*=" bg-primary"],
+      .theme-light main button[class*=" bg-green-"],
+      .theme-light main a > button[class*=" bg-green-"] {
         color: #ffffff !important;
       }
 
