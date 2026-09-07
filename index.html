@@ -285,6 +285,26 @@
         backdrop-filter: blur(12px);
         transform: perspective(900px) rotateY(-8deg) rotateX(2deg);
       }
+
+      /* Versão estática do card no mobile (fora do overlay decorativo) */
+      .hero-method--static {
+        position: static;
+        width: 100%;
+        max-width: 340px;
+        min-height: 0;
+        margin: 2.5rem auto 0;
+        padding: 22px 24px;
+        transform: none;
+        text-align: left;
+      }
+      .hero-method--static h3 {
+        font-size: 22px;
+        margin-bottom: 16px;
+      }
+      .hero-method--static ul {
+        gap: 10px;
+        font-size: 13px;
+      }
       .hero-method::before,
       .hero-method::after {
         content: '';
@@ -374,22 +394,14 @@
           opacity: 0.62;
           mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 82%, transparent 100%);
         }
-        .hero-method {
-          right: 4%;
-          top: 60%;
-          width: 250px;
-          min-height: 0;
-          padding: 20px;
-          transform: rotate(-3deg) scale(0.78);
-          transform-origin: top right;
+          .hero-visual {
+            display: none !important;
+          }
+
+          .hero-method--static {
+            margin-top: 2rem;
+          }
         }
-        .hero-method h3 { font-size: 20px; margin-bottom: 16px; }
-        .hero-method ul { gap: 10px; font-size: 12px; }
-        .hero-method-line { margin-bottom: 16px; }
-        .hero-method-divider { margin: 10px 0 14px; }
-        .hero-orbit-one { width: 360px; height: 220px; right: -20%; }
-        .hero-orbit-two { width: 300px; height: 440px; right: -5%; }
-      }
 
       .theme-light {
         background-color: #f7f7fb !important;
@@ -434,8 +446,33 @@
         background-image: linear-gradient(rgba(83, 0, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(83, 0, 255, 0.1) 1px, transparent 1px);
       }
       .theme-light .hero-method {
-        background: linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(246, 242, 255, 0.7));
-        box-shadow: 0 20px 80px rgba(83, 0, 255, 0.16), inset 0 1px rgba(255, 255, 255, 0.9);
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(246, 242, 255, 0.8));
+        border-color: rgba(83, 0, 255, 0.18);
+        box-shadow: 0 20px 60px rgba(83, 0, 255, 0.12), inset 0 1px rgba(255, 255, 255, 0.9);
+        --hero-ink: #17131f;
+        color: #17131f;
+      }
+      .theme-light .hero-method-eyebrow {
+        color: rgba(83, 0, 255, 0.75);
+      }
+      .theme-light .hero-method-divider {
+        background: rgba(23, 19, 31, 0.14);
+      }
+      .theme-light .hero-method ul {
+        color: #51495e;
+      }
+      .theme-light .hero-method li span {
+        border-color: rgba(83, 0, 255, 0.5);
+        color: #5300ff;
+      }
+      .theme-light .hero-method-line {
+        background: #5300ff;
+        box-shadow: 0 0 10px rgba(83, 0, 255, 0.4);
+      }
+      .theme-light .hero-method::before,
+      .theme-light .hero-method::after {
+        background: linear-gradient(90deg, transparent, #5300ff, transparent);
+        box-shadow: 0 0 10px rgba(83, 0, 255, 0.35);
       }
       .theme-light .hero-visual {
         opacity: 0.94;
