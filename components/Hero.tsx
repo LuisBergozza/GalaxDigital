@@ -3,40 +3,47 @@ import { ArrowRight, ChevronDown } from 'lucide-react';
 import { Button } from './ui/Button';
 
 export const Hero: React.FC = () => {
+  const stars = [
+    [18, 32, 2], [26, 68, 1], [34, 18, 1], [42, 82, 2], [48, 42, 1],
+    [57, 24, 2], [62, 74, 1], [71, 14, 1], [76, 88, 2], [84, 34, 1],
+    [90, 66, 2], [12, 84, 1], [38, 56, 1], [68, 52, 1], [96, 46, 1],
+  ];
+
   return (
     <section className="relative min-h-[90vh] md:min-h-screen flex items-center pt-24 md:pt-20 overflow-hidden">
-      {/* Background Image - apenas desktop */}
-      <div 
-        className="hidden md:block absolute inset-0 bg-cover md:bg-center bg-right bg-no-repeat"
-        style={{
-          backgroundImage: 'url(/16%20por%209.png)',
-        }}
-      ></div>
+      {/* Código visual responsivo: substitui o painel de imagem do hero. */}
+      <div className="hero-visual absolute inset-y-0 right-0 w-full md:w-[62%] overflow-hidden pointer-events-none" aria-hidden="true">
+        <div className="hero-grid absolute inset-0" />
+        <div className="hero-glow hero-glow-main absolute" />
+        <div className="hero-glow hero-glow-secondary absolute" />
+        <div className="hero-orbit hero-orbit-one absolute" />
+        <div className="hero-orbit hero-orbit-two absolute" />
 
-      {/* Stars Animation - apenas mobile */}
-      <div className="md:hidden absolute inset-0 overflow-hidden">
-        {[...Array(50)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute rounded-full bg-primary"
+        {stars.map(([left, top, size], index) => (
+          <span
+            key={index}
+            className="hero-star absolute rounded-full"
             style={{
-              width: `${Math.random() * 3 + 1}px`,
-              height: `${Math.random() * 3 + 1}px`,
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animation: `twinkle ${Math.random() * 3 + 2}s ease-in-out ${Math.random() * 2}s infinite`,
-              opacity: Math.random() * 0.7 + 0.3,
+              left: `${left}%`,
+              top: `${top}%`,
+              width: `${size}px`,
+              height: `${size}px`,
+              animationDelay: `${index * 0.17}s`,
             }}
           />
         ))}
-        <style dangerouslySetInnerHTML={{
-          __html: `
-            @keyframes twinkle {
-              0%, 100% { opacity: 0.3; transform: scale(1); }
-              50% { opacity: 1; transform: scale(1.2); }
-            }
-          `
-        }} />
+
+        <div className="hero-method absolute">
+          <div className="hero-method-line" />
+          <p className="hero-method-eyebrow">Metodologia Galax</p>
+          <div className="hero-method-divider" />
+          <h3>Onde todo<br />resultado começa</h3>
+          <ul>
+            <li><span>01</span> Diagnóstico e direção</li>
+            <li><span>02</span> Planejamento e estrutura</li>
+            <li><span>03</span> Crescimento na prática</li>
+          </ul>
+        </div>
       </div>
 
       {/* Background Gradients */}
