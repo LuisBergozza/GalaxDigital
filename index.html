@@ -206,6 +206,40 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
+
+      .theme-light {
+        background-color: #f7f7fb !important;
+        color: #17131f;
+      }
+      .theme-light [class*="bg-[#050505]"],
+      .theme-light [class*="bg-[#0A0A0A]"],
+      .theme-light [class*="bg-black"] {
+        background-color: #ffffff !important;
+      }
+      .theme-light [class*="bg-white/5"] {
+        background-color: rgba(23, 19, 31, 0.05) !important;
+      }
+      .theme-light [class*="bg-white/2"] {
+        background-color: rgba(23, 19, 31, 0.02) !important;
+      }
+      .theme-light [class*="text-white"]:not([class*="bg-primary"]):not([class*="bg-green"]),
+      .theme-light [class*="text-gray-300"],
+      .theme-light [class*="text-gray-400"],
+      .theme-light [class*="text-gray-500"] {
+        color: #4b4655 !important;
+      }
+      .theme-light [class*="border-white/"] {
+        border-color: rgba(23, 19, 31, 0.12) !important;
+      }
+      .theme-light [class*="from-black"],
+      .theme-light [class*="to-transparent"] {
+        --tw-gradient-from: #ffffff var(--tw-gradient-from-position) !important;
+      }
+      .theme-light .text-gradient {
+        background: linear-gradient(to right, #17131f, #5300ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     </style>
   <script type="importmap">
 {

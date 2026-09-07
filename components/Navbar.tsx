@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight, Moon, Sun } from 'lucide-react';
 import { Button } from './ui/Button';
 
-export const Navbar: React.FC = () => {
+interface NavbarProps {
+  isLightMode: boolean;
+  onToggleTheme: () => void;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -53,6 +58,16 @@ export const Navbar: React.FC = () => {
                 </a>
                 ))}
             </div>
+            <button
+              type="button"
+              onClick={onToggleTheme}
+              className="mr-2 flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-gray-300 transition-colors hover:bg-white/10 hover:text-white"
+              aria-label={isLightMode ? 'Ativar modo escuro' : 'Ativar modo claro'}
+              aria-pressed={isLightMode}
+              title={isLightMode ? 'Modo escuro' : 'Modo claro'}
+            >
+              {isLightMode ? <Moon size={18} /> : <Sun size={18} />}
+            </button>
             <a href="#contato">
               <Button size="sm" variant="primary" className={`rounded-lg transition-all duration-500 ${scrolled ? 'px-5' : 'px-6'}`}>
                 Falar com Especialista
@@ -94,6 +109,16 @@ export const Navbar: React.FC = () => {
                     Começar Agora
                 </Button>
               </a>
+              <button
+                type="button"
+                onClick={onToggleTheme}
+                className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 p-4 text-gray-300 transition-colors hover:bg-white/10 hover:text-white"
+                aria-label={isLightMode ? 'Ativar modo escuro' : 'Ativar modo claro'}
+                aria-pressed={isLightMode}
+              >
+                {isLightMode ? <Moon size={18} /> : <Sun size={18} />}
+                {isLightMode ? 'Modo escuro' : 'Modo claro'}
+              </button>
             </div>
           </div>
         )}
