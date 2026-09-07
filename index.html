@@ -489,6 +489,147 @@
       .theme-light footer {
         border-color: rgba(23, 19, 31, 0.12) !important;
       }
+
+      /* --- Ajustes adicionais modo claro --- */
+
+      /* Cartões escuros dos diferenciais viram cartões claros */
+      .theme-light #diferenciais .bg-\[\#0A0A0A\],
+      .theme-light #diferenciais [class*="bg-[#0A0A0A]"] {
+        background-color: #ffffff !important;
+        background-image: none !important;
+        border-color: rgba(23, 19, 31, 0.14) !important;
+        box-shadow: 0 8px 30px rgba(23, 19, 31, 0.06);
+      }
+
+      /* Títulos e textos dos cartões */
+      .theme-light #diferenciais h3 {
+        color: #282234 !important;
+      }
+      .theme-light #diferenciais .text-gray-400,
+      .theme-light #diferenciais .text-gray-500 {
+        color: #51495e !important;
+      }
+
+      /* Barras do gráfico abstrato ficam visíveis no claro */
+      .theme-light #diferenciais .bg-gray-800 {
+        background-color: rgba(23, 19, 31, 0.12) !important;
+      }
+      .theme-light #diferenciais .bg-primary {
+        background-color: #5300ff !important;
+      }
+
+      /* Trilhas das barras de progresso */
+      .theme-light #diferenciais .h-1\.5,
+      .theme-light #diferenciais .h-1 {
+        background-color: rgba(23, 19, 31, 0.1) !important;
+      }
+
+      /* Portal do cliente: manter interno escuro é ilegível; usar claro */
+      .theme-light #diferenciais .bg-black\/40 {
+        background-color: rgba(23, 19, 31, 0.04) !important;
+      }
+      .theme-light #diferenciais .bg-black\/40 .text-white,
+      .theme-light #diferenciais .bg-black\/40 .text-green-400,
+      .theme-light #diferenciais .bg-black\/40 .font-mono {
+        color: #17131f !important;
+      }
+      .theme-light #diferenciais .bg-black\/40 .text-green-400 {
+        color: #15803d !important;
+      }
+
+      /* Badge "Por que nos escolher?" e badges em geral */
+      .theme-light .inline-flex.rounded-full[class*="bg-white/5"] {
+        background-color: rgba(83, 0, 255, 0.06) !important;
+        border-color: rgba(83, 0, 255, 0.2) !important;
+      }
+
+      /* Botões brancos/glass com texto branco no claro */
+      .theme-light [class*="bg-white/10"] [class*="text-white"]:not(button *),
+      .theme-light nav [class*="text-white"] {
+        color: #17131f !important;
+      }
+
+      /* Header transparente sobre fundo claro */
+      .theme-light header {
+        background-color: rgba(247, 247, 251, 0.85) !important;
+        border-color: rgba(23, 19, 31, 0.1) !important;
+      }
+      .theme-light header [class*="text-white"],
+      .theme-light header .text-white {
+        color: #17131f !important;
+      }
+
+      /* Logo do site no claro */
+      .theme-light img[src*="logo branca"],
+      .theme-light img[src*="logo-branca"] {
+        filter: invert(1) brightness(0.15);
+      }
+
+      /* Seção CTA / contatos com texto branco */
+      .theme-light section h2,
+      .theme-light section h3 {
+        color: #282234 !important;
+      }
+      .theme-light section h2 .text-white,
+      .theme-light section .text-white:not([class*="bg-primary"]):not([class*="bg-green"]) {
+        color: #282234 !important;
+      }
+
+      /* Formulários e inputs */
+      .theme-light input,
+      .theme-light textarea,
+      .theme-light select {
+        background-color: #ffffff !important;
+        color: #17131f !important;
+        border-color: rgba(23, 19, 31, 0.15) !important;
+      }
+      .theme-light input::placeholder,
+      .theme-light textarea::placeholder {
+        color: #7a7488 !important;
+      }
+
+      /* Grid/logos de parceiros */
+      .theme-light [class*="opacity-"][class*="text-white"] {
+        color: #4b4655 !important;
+      }
+
+      /* Elementos decorativos que somem no claro */
+      .theme-light [class*="bg-noise"] {
+        opacity: 0.03 !important;
+      }
+      .theme-light [class*="blur-"][class*="bg-primary/10"],
+      .theme-light [class*="blur-"][class*="bg-purple"] {
+        opacity: 0.5;
+      }
+
+      /* TrustBar (marquee de parceiros) */
+      .theme-light .bg-black.border-y {
+        background-color: #ffffff !important;
+      }
+      .theme-light .bg-black.border-y .text-gray-700 {
+        color: rgba(23, 19, 31, 0.32) !important;
+      }
+      .theme-light .bg-black.border-y [class*="from-black"] {
+        --tw-gradient-from: #ffffff var(--tw-gradient-from-position) !important;
+      }
+
+      /* Card de contato / formulário */
+      .theme-light [class*="bg-[#0A0A0A]"] {
+        background-color: #ffffff !important;
+        border-color: rgba(23, 19, 31, 0.12) !important;
+      }
+      .theme-light [class*="bg-[#0A0A0A]"] .text-white {
+        color: #282234 !important;
+      }
+      .theme-light .bg-black\/50 {
+        background-color: rgba(23, 19, 31, 0.05) !important;
+      }
+
+      /* Tooltip flutuante do WhatsApp */
+      .theme-light .group .bg-\[\#0A0A0A\].px-4 {
+        background-color: #ffffff !important;
+        color: #17131f !important;
+      }
     </style>
   <script type="importmap">
 {
