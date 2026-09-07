@@ -498,7 +498,7 @@
       .theme-light #servicos .group span.text-gray-300 {
         color: #51495e !important;
       }
-      .theme-light #diferenciais .bg-gradient-to-r {
+      .theme-light #diferenciais .bg-gradient-to-r:not(.bg-clip-text) {
         background: linear-gradient(110deg, #ffffff, #f3edff) !important;
         border-color: rgba(23, 19, 31, 0.14) !important;
       }
@@ -673,9 +673,12 @@
         color: #17131f !important;
       }
 
-      /* Botões primários: texto sempre branco, inclusive no claro */
-      .theme-light button[class*="bg-primary"],
-      .theme-light a > button[class*="bg-primary"] {
+      /* Botões primários: texto sempre branco, inclusive no claro.
+         O espaço em " bg-primary" evita casar com hover:bg-primary/10 (botão outline).
+         Especificidade maior que a regra global de text-white. */
+      .theme-light main button[class*=" bg-primary"],
+      .theme-light nav button[class*=" bg-primary"],
+      .theme-light main a > button[class*=" bg-primary"] {
         color: #ffffff !important;
       }
 
