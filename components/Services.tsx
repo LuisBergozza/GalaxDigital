@@ -79,27 +79,27 @@ const services: ServiceItem[] = [
 
 export const Services: React.FC = () => {
   return (
-    <section id="servicos" className="py-16 relative bg-[#050505]">
+    <section id="servicos" className="py-20 md:py-28 relative bg-[#050505]">
       <div className="container mx-auto px-6 sm:px-8 md:px-10 lg:px-12">
         <div className="flex flex-col lg:flex-row gap-16">
-          
+
           {/* Sticky Left Column */}
           <div className="lg:w-5/12">
             <div className="lg:sticky lg:top-32 h-fit">
-              
+
               <h2 className="text-xl xs:text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-10 leading-tight">
                 <span className="whitespace-nowrap">Soluções completas para</span> <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">Escalar seu Negócio</span>
               </h2>
-              
+
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
                 <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10"></div>
-                <img 
-                  src="/imagem.png" 
-                  alt="Equipe analisando dados" 
+                <img
+                  src="/imagem.png"
+                  alt="Equipe analisando dados"
                   className="w-full aspect-square object-contain bg-black/40 transition-transform duration-700 group-hover:scale-105"
                 />
-                
+
                 {/* Overlay Card on Image */}
                 <div className="absolute bottom-6 left-6 right-6 p-4 bg-black/60 backdrop-blur-md border border-white/10 rounded-xl z-20">
                     <div className="flex items-center justify-between">
@@ -119,7 +119,7 @@ export const Services: React.FC = () => {
           {/* Scrollable Right Column */}
           <div className="lg:w-7/12 flex flex-col gap-8">
             {services.map((service) => (
-              <div 
+              <div
                 key={service.id}
                 className="group relative bg-[#0A0A0A] border border-white/5 rounded-3xl p-8 hover:border-primary/30 transition-all duration-500 hover:shadow-[0_0_50px_-20px_rgba(83,0,255,0.2)]"
               >

@@ -10,18 +10,18 @@ export const TargetAudience: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 relative bg-[#050505] overflow-hidden">
+    <section className="py-20 md:py-28 relative bg-[#050505] overflow-hidden">
       {/* Background Elements */}
       <div className="absolute right-0 top-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] translate-x-1/2"></div>
-      
+
       <div className="container mx-auto px-6 sm:px-8 md:px-10 lg:px-12 relative z-10">
         <div className="max-w-4xl mx-auto">
-          
+
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-primary text-xs font-bold uppercase tracking-widest mb-6">
               Perfil Ideal
             </div>
-            
+
             <h2 className="text-4xl md:text-5xl font-bold leading-tight">
               Para que tipo de empresa é a nossa <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Assessoria?</span>
             </h2>

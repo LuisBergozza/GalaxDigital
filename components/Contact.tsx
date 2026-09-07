@@ -47,7 +47,7 @@ export const Contact: React.FC = () => {
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
-    <section id="contato" className="py-12 md:py-16 relative overflow-hidden">
+    <section id="contato" className="py-16 md:py-24 relative overflow-hidden">
       {/* Dynamic Background */}
       <div className="absolute top-0 left-0 w-full h-full -z-10">
           <div className="absolute top-1/4 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-primary/20 rounded-full blur-[80px] md:blur-[120px] animate-pulse"></div>
@@ -56,40 +56,40 @@ export const Contact: React.FC = () => {
 
       <div className="container mx-auto px-6 sm:px-8 md:px-10 lg:px-12">
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 lg:gap-20 items-stretch">
-          
+
           {/* Left Column: Info & Context */}
           <div className="lg:w-5/12 flex flex-col justify-center">
              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-primary text-xs font-bold uppercase tracking-widest mb-4 md:mb-6 w-fit">
                 Vamos conversar
              </div>
-             
+
              <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight">
                Pronto para <br />
                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Dominar o Mercado?</span>
              </h2>
-             
+
              <p className="text-gray-400 text-base md:text-lg mb-8 md:mb-12 leading-relaxed">
                Não deixe dinheiro na mesa. Nossos estrategistas estão prontos para desenhar o plano que vai dobrar seu faturamento.
              </p>
 
              {/* Organized Contact Cards */}
              <div className="flex flex-col gap-3 md:gap-4">
-                <ContactInfoItem 
-                  icon={MapPin} 
-                  label="Localização" 
-                  value="Concórdia SC - Oeste Catarinense" 
+                <ContactInfoItem
+                  icon={MapPin}
+                  label="Localização"
+                  value="Concórdia SC - Oeste Catarinense"
                   href="https://www.google.com/maps/place/Concórdia,+SC"
                 />
-                <ContactInfoItem 
-                  icon={Mail} 
-                  label="Email Corporativo" 
-                  value="galaxy.design2022@gmail.com" 
+                <ContactInfoItem
+                  icon={Mail}
+                  label="Email Corporativo"
+                  value="galaxy.design2022@gmail.com"
                   href="mailto:galaxy.design2022@gmail.com"
                 />
-                <ContactInfoItem 
-                  icon={Phone} 
-                  label="WhatsApp Direto" 
-                  value="(49) 99942-8374" 
+                <ContactInfoItem
+                  icon={Phone}
+                  label="WhatsApp Direto"
+                  value="(49) 99942-8374"
                   href="https://wa.me/5549999428374"
                 />
              </div>
@@ -98,15 +98,15 @@ export const Contact: React.FC = () => {
           {/* Right Column: WhatsApp Card */}
           <div className="lg:w-7/12 relative mt-4 lg:mt-0">
             <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 rounded-3xl blur-2xl opacity-20 transform rotate-1"></div>
-            
+
             <div className="relative bg-[#0A0A0A]/80 backdrop-blur-xl border border-white/10 rounded-2xl md:rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden">
-              
+
               {/* Decorative noise texture */}
               <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] pointer-events-none"></div>
 
               {/* WhatsApp Card Content */}
               <div className="relative z-10 flex flex-col items-center justify-center text-center min-h-[400px] md:min-h-[500px]">
-                
+
                 {/* WhatsApp Icon */}
                 <div className="w-20 h-20 md:w-28 md:h-28 bg-green-500/20 rounded-full flex items-center justify-center mb-6 md:mb-8 relative group">
                   <div className="absolute inset-0 bg-green-500/20 rounded-full animate-ping"></div>
@@ -115,22 +115,22 @@ export const Contact: React.FC = () => {
 
                 {/* Title */}
                 <h3 className="text-2xl md:text-4xl font-bold text-white mb-3 md:mb-4">Fale com um Especialista</h3>
-                
+
                 {/* Description */}
                 <p className="text-gray-400 max-w-md text-sm md:text-lg mb-8 md:mb-10 leading-relaxed px-4">
                   Converse diretamente com nossa equipe pelo WhatsApp e descubra como podemos ajudar seu negócio a crescer.
                 </p>
 
                 {/* WhatsApp Button */}
-                <a 
+                <a
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full max-w-md"
                 >
-                  <Button 
-                    fullWidth 
-                    size="lg" 
+                  <Button
+                    fullWidth
+                    size="lg"
                     className="group relative overflow-hidden h-14 md:h-16 text-base md:text-lg bg-green-600 hover:bg-green-700"
                   >
                     <div className="flex items-center justify-center gap-3">
@@ -138,7 +138,7 @@ export const Contact: React.FC = () => {
                       <span>Iniciar Conversa no WhatsApp</span>
                       <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />
                     </div>
-                    
+
                     {/* Shine Effect */}
                     <div className="absolute top-0 -left-[100%] w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 group-hover:animate-[shine_1.5s_infinite]"></div>
                   </Button>

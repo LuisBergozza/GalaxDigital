@@ -40,7 +40,7 @@ export const Footer: React.FC<FooterProps> = ({ isLightMode = false }) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black pt-12 pb-8 border-t border-white/5 relative overflow-hidden text-sm">
+    <footer className="bg-black pt-16 pb-10 border-t border-white/5 relative overflow-hidden text-sm">
 
       {/* Background Gradients (Subtle) */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-primary/5 rounded-full blur-[120px] -z-10 pointer-events-none"></div>

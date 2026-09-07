@@ -9,7 +9,7 @@ const items = [
 
 export const Stats: React.FC = () => {
   return (
-    <section className="py-6 md:py-10 border-y border-white/5 bg-white/2 relative">
+    <section className="py-10 md:py-14 border-y border-white/5 bg-white/2 relative">
       <div className="container mx-auto px-6 sm:px-8 md:px-10 lg:px-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-8">
           {items.map((item, index) => (

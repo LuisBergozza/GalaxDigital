@@ -185,6 +185,20 @@
       }
     </script>
     <style>
+      /* Margens laterais mais generosas em todas as seções (sem exagerar no centro) */
+      .container {
+        max-width: 1320px !important;
+      }
+      @media (min-width: 640px) {
+        .container { padding-left: 2.5rem !important; padding-right: 2.5rem !important; }
+      }
+      @media (min-width: 1024px) {
+        .container { padding-left: 4rem !important; padding-right: 4rem !important; }
+      }
+      @media (min-width: 1536px) {
+        .container { padding-left: 5rem !important; padding-right: 5rem !important; }
+      }
+
       body {
         background-color: #050505;
         color: #ffffff;
