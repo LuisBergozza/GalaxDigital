@@ -105,12 +105,6 @@
     }
     </script>
 
-    <div id="root">
-  <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;">
-    Agência de Marketing em Concórdia SC | Galax Digital
-  </h1>
-</div>
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -1057,6 +1051,18 @@
         .galax-profile-quote p { font-size: 14px; }
       }
       @media (max-width: 767px) {
+        .animate-blob,
+        .animate-pulse,
+        .animate-ping,
+        .galax-method-core::before,
+        .galax-method-flow-line::after {
+          animation-duration: 6s;
+        }
+        .galax-method-section,
+        .galax-profile-section {
+          content-visibility: auto;
+          contain-intrinsic-size: 700px;
+        }
         .theme-light .galax-method-glow { opacity: .04; }
         .theme-light .galax-method-step,
         .theme-light .galax-method-step:hover { border: 0; background: transparent; box-shadow: none; }
