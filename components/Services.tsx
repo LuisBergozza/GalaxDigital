@@ -95,7 +95,7 @@ export const Services: React.FC = () => {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
                 <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10"></div>
                 <img
-                  src="/imagem.png"
+                  src="/imagem.webp"
                   alt="Equipe da Galax Digital analisando dados de performance"
                   loading="lazy"
                   decoding="async"

@@ -50,7 +50,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) =>
           {/* Logo */}
           <a href="#" className="flex items-center group z-50">
             <img
-              src={isLightMode ? '/logo preta.png' : '/logo_navbar.png'}
+              src={isLightMode ? '/logo preta.png' : '/logo_navbar.webp'}
               alt="Galax Digital"
               width={160}
               height={56}

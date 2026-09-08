@@ -4,11 +4,14 @@ import { Instagram, Linkedin, Facebook, ArrowRight, Mail, Phone, MapPin } from '
 interface SocialButtonProps {
   icon: React.ElementType;
   href: string;
+  label: string;
 }
 
-const SocialButton: React.FC<SocialButtonProps> = ({ icon: Icon, href }) => (
+const SocialButton: React.FC<SocialButtonProps> = ({ icon: Icon, href, label }) => (
   <a
     href={href}
+    aria-label={label}
+    title={label}
     className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white hover:border-primary hover:scale-110 hover:shadow-[0_0_15px_rgba(83,0,255,0.4)] transition-all duration-300"
   >
     <Icon size={18} />
@@ -67,8 +70,8 @@ export const Footer: React.FC<FooterProps> = ({ isLightMode = false }) => {
             </p>
 
             <div className="flex gap-4 pt-2">
-              <SocialButton icon={Instagram} href="https://www.instagram.com/galaxdigital_/" />
-              <SocialButton icon={Facebook} href="https://www.facebook.com/EfeitoGalax/" />
+              <SocialButton icon={Instagram} href="https://www.instagram.com/galaxdigital_/" label="Instagram da Galax Digital" />
+              <SocialButton icon={Facebook} href="https://www.facebook.com/EfeitoGalax/" label="Facebook da Galax Digital" />
             </div>
           </div>
 
