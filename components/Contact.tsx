@@ -63,9 +63,9 @@ export const Contact: React.FC = () => {
                 Vamos conversar
              </div>
 
-             <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight">
-               Pronto para <br />
-               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Dominar o Mercado?</span>
+             <h2 className="max-w-xl text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6 leading-[1.12] md:leading-tight">
+               Pronto para <br className="hidden md:block" />
+               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400 whitespace-nowrap">Dominar o Mercado?</span>
              </h2>
 
              <p className="text-gray-400 text-base md:text-lg mb-8 md:mb-12 leading-relaxed">

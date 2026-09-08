@@ -62,9 +62,9 @@ export const Hero: React.FC = () => {
           </div>
           <h1 className="sr-only">Agência de Marketing em Concórdia SC | Galax Digital</h1>
 
-          <h2 className="text-2xl xs:text-3xl sm:text-3xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-4 md:mb-6 leading-[1.2] md:leading-tight tracking-tight">
-            <span className="md:whitespace-nowrap">Transforme sua Presença Digital</span> <br />
-            <span className="text-gradient whitespace-nowrap">em Crescimento Consistente</span>
+          <h2 className="max-w-xl text-2xl xs:text-3xl sm:text-3xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-4 md:mb-6 leading-[1.18] md:leading-tight tracking-tight">
+            <span className="block md:whitespace-nowrap">Transforme sua Presença Digital</span>
+            <span className="block text-gradient md:whitespace-nowrap">em Crescimento Consistente</span>
           </h2>
 
           <p className="text-sm sm:text-base md:text-sm lg:text-base xl:text-lg text-gray-300 mb-6 md:mb-10 leading-relaxed">
