@@ -945,7 +945,7 @@
       .galax-method-close p i { padding: 0 10px; color: #a879ff; font-style: normal; }
       .galax-method-cta { display: inline-flex; align-items: center; gap: 9px; color: #ffffff; font-size: 13px; font-weight: 700; }
       .galax-method-cta:hover { color: #c4a9ff; }
-      @keyframes methodPulse { 0%, 100% { transform: translateX(0); opacity: .5; } 50% { transform: translateX(250px); opacity: 1; } }
+      @keyframes methodPulse { 0%, 100% { left: 0; opacity: .5; } 50% { left: calc(100% - 7px); opacity: 1; } }
       @keyframes methodSpin { to { transform: rotate(360deg); } }
       @media (max-width: 767px) {
         .galax-method-section { padding-top: 72px; }
@@ -980,7 +980,7 @@
         .galax-method-close p { line-height: 2; letter-spacing: 0; }
         .galax-method-close p i { padding: 0 4px; }
       }
-      @keyframes methodPulseVertical { 0%, 100% { transform: translateY(0); opacity: .5; } 50% { transform: translateY(180px); opacity: 1; } }
+      @keyframes methodPulseVertical { 0%, 100% { top: 0; opacity: .5; } 50% { top: calc(100% - 7px); opacity: 1; } }
       @media (prefers-reduced-motion: reduce) {
         .galax-method-flow-line, .galax-method-step, .galax-method-core::before, .galax-method-flow-line::after { animation: none !important; transition: none !important; }
         .galax-method-step { opacity: 1 !important; transform: none !important; }
