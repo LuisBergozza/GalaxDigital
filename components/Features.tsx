@@ -1,134 +1,90 @@
-import React from 'react';
-import { TrendingUp, Zap, ShieldCheck, PieChart, ArrowUpRight, Lock } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { ArrowRight, BarChart3, Globe2, RefreshCw, Target, Zap } from 'lucide-react';
+
+const methodSteps = [
+  { number: '01', title: 'Estrutura', headline: 'Sua marca começa aqui.', tags: 'Google • Instagram • Site', detail: 'Presença digital sólida e profissional.', icon: Globe2 },
+  { number: '02', title: 'Estratégia', headline: 'Cada ação tem um porquê.', tags: 'Conteúdo • Posicionamento', detail: 'Direção clara para chegar mais longe.', icon: Target },
+  { number: '03', title: 'Execução', headline: 'Tirar a estratégia do papel.', tags: 'Criativos • Campanhas • SEO', detail: 'Ideias colocadas para funcionar.', icon: Zap },
+  { number: '04', title: 'Aquisição', headline: 'Sua empresa na frente das pessoas certas.', tags: 'Tráfego Pago • Leads', detail: 'Aceleramos o que pode gerar negócio.', icon: BarChart3 },
+  { number: '05', title: 'Otimização', headline: 'Medir. Ajustar. Crescer.', tags: 'Dados • Testes • Performance', detail: 'O que funciona, escala. O resto, muda.', icon: RefreshCw },
+];
 
 export const Features: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.16 });
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="diferenciais" className="py-20 md:py-28 relative overflow-hidden scroll-mt-24">
-      {/* Background Elements */}
-      <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -translate-x-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-900/10 rounded-full blur-[120px] translate-x-1/3"></div>
+    <section ref={sectionRef} id="diferenciais" className={`galax-method-section py-20 md:py-28 relative overflow-hidden scroll-mt-24 ${isVisible ? 'is-visible' : ''}`}>
+      <div className="galax-method-glow galax-method-glow-one absolute" />
+      <div className="galax-method-glow galax-method-glow-two absolute" />
 
       <div className="container mx-auto px-6 sm:px-8 md:px-10 lg:px-12 relative z-10">
-
-        {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-primary text-xs font-bold uppercase tracking-widest mb-4">
-            Por que nos escolher?
+        <header className="galax-method-header max-w-3xl mx-auto text-center">
+          <div className="galax-method-kicker inline-flex items-center gap-2 px-3 py-1 rounded-full text-primary text-xs font-bold uppercase tracking-widest">
+            <span className="galax-method-kicker-dot" /> Método proprietário
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Não é sorte, é <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Método Validado</span>
+          <h2 className="text-3xl md:text-5xl font-bold mt-5 mb-5">
+            Não é sorte.<br />
+            É <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Método Galax.</span>
           </h2>
-          <p className="text-gray-400 text-lg">
-            Enquanto o mercado foca em curtidas, nós focamos na única métrica que paga as contas: <span className="text-white font-semibold">Lucro no seu bolso.</span>
+          <p className="text-gray-400 text-base md:text-lg max-w-xl mx-auto">
+            Estratégia, presença e performance trabalhando juntas para gerar resultado.
           </p>
+        </header>
+
+        <div className="galax-method-flow" aria-label="Etapas do Método Galax">
+          <div className="galax-method-flow-line" />
+          <div className="galax-method-core"><span>MÉTODO</span><strong>GALAX</strong><small>tudo conectado</small></div>
+
+          {methodSteps.map((step, index) => {
+            const Icon = step.icon;
+            return (
+              <article key={step.number} className={`galax-method-step galax-method-step-${index + 1}`} style={{ '--step-delay': `${index * 110}ms` } as React.CSSProperties}>
+                <div className="galax-method-step-icon"><Icon size={22} strokeWidth={1.6} /></div>
+                <div className="galax-method-step-copy">
+                  <div className="galax-method-step-meta"><span>{step.number}</span><b>{step.title}</b></div>
+                  <h3>{step.headline}</h3>
+                  <p className="galax-method-tags">{step.tags}</p>
+                  <p className="galax-method-detail">{step.detail}</p>
+                </div>
+              </article>
+            );
+          })}
         </div>
 
-        {/* Bento Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6">
-
-          {/* Card 1: ROI Focus (Large) */}
-          <div className="md:col-span-2 group relative overflow-hidden rounded-3xl bg-[#0A0A0A] border border-white/10 p-8 hover:border-primary/50 transition-all duration-500">
-            <div className="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-100 transition-opacity duration-500">
-              <ArrowUpRight size={48} className="text-primary" />
-            </div>
-            <div className="relative z-10 h-full flex flex-col justify-between">
-              <div>
-                <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                  <TrendingUp size={24} />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Foco Real em Resultado</h3>
-                <p className="text-gray-400 max-w-md">
-                  Não trabalhamos com métricas de vaidade. Nossos relatórios mostram o que realmente importa: custo por lead, custo por aquisição, conversão e retorno sobre o investimento.
-                </p>
-              </div>
-
-              {/* Abstract Chart Graphic */}
-              <div className="mt-8 flex items-end gap-2 h-24 w-full max-w-sm opacity-50 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="w-1/5 bg-gray-800 rounded-t-lg h-[40%] group-hover:h-[50%] group-hover:bg-primary/30 transition-all duration-700"></div>
-                <div className="w-1/5 bg-gray-800 rounded-t-lg h-[60%] group-hover:h-[70%] group-hover:bg-primary/50 transition-all duration-700 delay-75"></div>
-                <div className="w-1/5 bg-gray-800 rounded-t-lg h-[30%] group-hover:h-[45%] group-hover:bg-primary/40 transition-all duration-700 delay-100"></div>
-                <div className="w-1/5 bg-gray-800 rounded-t-lg h-[80%] group-hover:h-[90%] group-hover:bg-primary/70 transition-all duration-700 delay-150"></div>
-                <div className="w-1/5 bg-primary rounded-t-lg h-[65%] group-hover:h-[100%] shadow-[0_0_20px_rgba(83,0,255,0.5)] transition-all duration-700 delay-200"></div>
-              </div>
-            </div>
+        <div className="galax-together">
+          <div className="galax-together-copy">
+            <span className="galax-method-kicker-text">PARCERIA NA PRÁTICA</span>
+            <h2>Feito junto.<br /><span>Pensado para o seu negócio.</span></h2>
+            <p>A Galax não trabalha no automático. Estratégia e execução são construídas junto de quem conhece o negócio.</p>
           </div>
-
-          {/* Card 2: Agility (Tall) */}
-          <div className="group relative overflow-hidden rounded-3xl bg-[#0A0A0A] border border-white/10 p-8 hover:border-primary/50 transition-all duration-500 bg-gradient-to-b from-transparent to-primary/5">
-             <div className="absolute inset-0 bg-noise opacity-5"></div>
-             <div className="relative z-10">
-                <div className="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-400 mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Zap size={24} />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">Execução Ágil e Contínua</h3>
-                <p className="text-gray-400 text-sm mb-6">
-                  O mercado muda rápido e a estratégia precisa acompanhar. Atuamos com otimizações frequentes, ajustes constantes e decisões rápidas baseadas no desempenho real das campanhas.
-                </p>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3 text-xs text-gray-500">
-                    <div className="w-full h-1.5 bg-gray-800 rounded-full overflow-hidden">
-                      <div className="h-full bg-purple-500 w-[90%] animate-pulse"></div>
-                    </div>
-                    <span>Speed</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-xs text-gray-500">
-                    <div className="w-full h-1.5 bg-gray-800 rounded-full overflow-hidden">
-                      <div className="h-full bg-primary w-[85%] animate-pulse delay-75"></div>
-                    </div>
-                    <span>Optim.</span>
-                  </div>
-                </div>
-             </div>
+          <div className="galax-together-system" aria-label="Sua empresa e Galax conectadas para gerar resultado">
+            <div className="galax-together-node"><span className="galax-together-icon"><Globe2 size={20} /></span><b>SUA EMPRESA</b><small>Conhecimento do negócio</small></div>
+            <div className="galax-together-operator">+</div>
+            <div className="galax-together-node"><span className="galax-together-icon galax-together-icon-purple"><Zap size={20} /></span><b>GALAX</b><small>Estratégia + execução</small></div>
+            <div className="galax-together-operator">=</div>
+            <div className="galax-together-result"><BarChart3 size={24} /><b>RESULTADO</b></div>
           </div>
-
-          {/* Card 3: Data Driven (Square) */}
-          <div className="group relative overflow-hidden rounded-3xl bg-[#0A0A0A] border border-white/10 p-8 hover:border-primary/50 transition-all duration-500">
-            <div className="absolute -right-4 -bottom-4 w-32 h-32 bg-primary/20 rounded-full blur-2xl group-hover:bg-primary/30 transition-all duration-500"></div>
-            <div className="relative z-10">
-               <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400 mb-6">
-                  <PieChart size={24} />
-               </div>
-               <h3 className="text-xl font-bold text-white mb-2">Estratégia Orientada por Dados</h3>
-               <p className="text-gray-400 text-sm">
-                 Cada decisão é sustentada por análise de dados e leitura de mercado. Menos achismo, mais estratégia validada por performance.
-               </p>
-            </div>
-          </div>
-
-          {/* Card 4: Transparency (Wide) */}
-          <div className="md:col-span-2 group relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#0A0A0A] to-[#110524] border border-white/10 p-8 hover:border-primary/50 transition-all duration-500 flex flex-col md:flex-row items-center gap-8">
-            <div className="flex-1">
-               <div className="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center text-green-400 mb-6">
-                  <ShieldCheck size={24} />
-               </div>
-               <h3 className="text-2xl font-bold text-white mb-2">Transparência Total</h3>
-               <p className="text-gray-400">
-                 Você tem acesso completo às contas de anúncios e recebe relatórios claros e objetivos sobre tudo que está sendo feito. Sem taxas ocultas, sem promessas vazias.
-               </p>
-            </div>
-
-            <div className="flex-1 w-full bg-black/40 rounded-xl p-4 border border-white/5 shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-500">
-              <div className="flex items-center gap-2 mb-4 border-b border-white/5 pb-2">
-                <Lock size={12} className="text-green-500" />
-                <span className="text-xs text-gray-500">Client Access Portal</span>
-              </div>
-              <div className="space-y-2">
-                <div className="flex justify-between text-xs">
-                  <span className="text-gray-400">Total Investido</span>
-                  <span className="text-white font-mono">R$ 14.250,00</span>
-                </div>
-                 <div className="flex justify-between text-xs">
-                  <span className="text-gray-400">Receita Gerada</span>
-                  <span className="text-green-400 font-mono font-bold">R$ 98.420,00</span>
-                </div>
-                <div className="w-full h-1 bg-gray-800 rounded-full mt-2 overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-primary to-green-400 w-3/4"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
+
+        <footer className="galax-method-close text-center">
+          <h2>Tudo conectado.<br /><span>Um objetivo: resultado.</span></h2>
+          <p>Presença <i>→</i> Estratégia <i>→</i> Execução <i>→</i> Performance</p>
+          <a href="#contato" className="galax-method-cta">Conheça o Método Galax <ArrowRight size={17} /></a>
+        </footer>
       </div>
     </section>
   );
