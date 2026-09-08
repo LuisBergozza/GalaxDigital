@@ -550,6 +550,31 @@
       .theme-light footer {
         border-color: rgba(23, 19, 31, 0.12) !important;
       }
+      .theme-light .galax-stats {
+        background: #ffffff !important;
+        border-color: rgba(23, 19, 31, 0.1) !important;
+      }
+      .theme-light .galax-stat-item {
+        background: transparent !important;
+        border-color: transparent !important;
+      }
+      .theme-light .galax-stat-item > div {
+        color: #4b4655 !important;
+      }
+      .theme-light .galax-stat-item:hover > div {
+        color: #5300ff !important;
+      }
+      .theme-light .galax-nav-links {
+        background: rgba(83, 0, 255, 0.04) !important;
+        border-color: rgba(83, 0, 255, 0.12) !important;
+      }
+      .theme-light .galax-nav-links a {
+        color: #4b4655 !important;
+      }
+      .theme-light .galax-nav-links a:hover {
+        color: #5300ff !important;
+        background: rgba(83, 0, 255, 0.08) !important;
+      }
 
       /* --- Ajustes adicionais modo claro --- */
 
@@ -715,6 +740,35 @@
         background-image: linear-gradient(90deg, #5300ff, #6d28d9) !important;
         -webkit-background-clip: text !important;
         background-clip: text !important;
+      }
+
+      /* Correcoes finais de contraste para os dois grupos apontados no modo claro. */
+      .theme-light .galax-nav-links {
+        background-color: rgba(83, 0, 255, 0.04) !important;
+        border-color: rgba(83, 0, 255, 0.12) !important;
+      }
+      .theme-light .galax-nav-links a,
+      .theme-light .galax-nav-links a.text-gray-300 {
+        color: #4b4655 !important;
+      }
+      .theme-light .galax-nav-links a:hover {
+        color: #5300ff !important;
+        background-color: rgba(83, 0, 255, 0.08) !important;
+      }
+      .theme-light .galax-stats {
+        background-color: #ffffff !important;
+        border-color: rgba(23, 19, 31, 0.1) !important;
+      }
+      .theme-light .galax-stats .galax-stat-item,
+      .theme-light .galax-stats .galax-stat-item:hover {
+        background-color: transparent !important;
+        border-color: transparent !important;
+      }
+      .theme-light .galax-stats .galax-stat-item > div {
+        color: #4b4655 !important;
+      }
+      .theme-light .galax-stats .galax-stat-item:hover > div {
+        color: #5300ff !important;
       }
     </style>
   <script type="importmap">

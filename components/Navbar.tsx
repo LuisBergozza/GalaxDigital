@@ -61,12 +61,15 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) =>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-1">
-            <div className={`flex items-center bg-white/5 rounded-xl px-2 border border-white/5 mr-4 transition-all duration-500 ${scrolled ? 'py-0.5' : 'py-1'}`}>
+            <div
+              className={`galax-nav-links flex items-center rounded-xl px-2 mr-4 transition-all duration-500 ${scrolled ? 'py-0.5' : 'py-1'} ${isLightMode ? 'border border-purple-200/70' : 'border border-white/5'}`}
+              style={isLightMode ? { backgroundColor: 'rgba(83, 0, 255, 0.04)' } : undefined}
+            >
                 {navLinks.map((link) => (
                 <a
                     key={link.name}
                     href={link.href}
-                    className="relative px-5 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+                    className={`relative px-5 py-2 text-sm font-medium transition-colors rounded-lg ${isLightMode ? 'text-[#4b4655] hover:text-primary hover:bg-purple-500/10' : 'text-gray-300 hover:text-white hover:bg-white/5'}`}
                 >
                     {link.name}
                 </a>
