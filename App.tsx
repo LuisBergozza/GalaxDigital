@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { Stats } from './components/Stats';
 import { TrustBar } from './components/TrustBar';
 import { Services } from './components/Services';
 import { Features } from './components/Features';
@@ -34,7 +33,6 @@ const App: React.FC = () => {
       <main>
         <Hero />
         <TrustBar />
-        <Stats />
         <Services />
         <Features />
         {/* <Testimonials /> */}
