@@ -68,7 +68,7 @@ export const Features: React.FC = () => {
           <svg className="galax-method-flow-path" viewBox="0 0 1120 560" preserveAspectRatio="none" aria-hidden="true">
             <path d="M 150 82 C 105 180, 105 290, 205 390 C 310 485, 450 520, 560 510 C 700 520, 840 485, 930 390 C 1020 300, 1010 180, 960 82" />
             <circle className="galax-method-flow-orb" r="5">
-              <animateMotion dur="6s" repeatCount="indefinite" path="M 960 82 C 1010 180, 1020 300, 930 390 C 840 485, 700 520, 560 510 C 450 520, 310 485, 205 390 C 105 290, 105 180, 150 82" />
+              <animateMotion dur="6s" repeatCount="indefinite" path="M 150 82 C 105 180, 105 290, 205 390 C 310 485, 450 520, 560 510 C 700 520, 840 485, 930 390 C 1020 300, 1010 180, 960 82" />
             </circle>
           </svg>
           <div className="galax-method-core"><span>MÉTODO</span><strong>GALAX</strong><small>tudo conectado</small></div>
