@@ -34,7 +34,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) =>
   const navLinks = [
     { name: 'Soluções', href: '#servicos' },
     { name: 'Diferenciais', href: '#diferenciais' },
-    { name: 'Resultados', href: '#depoimentos' },
+    { name: 'Para quem somos', href: '#resultados' },
   ];
 
   return (
