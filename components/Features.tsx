@@ -27,7 +27,7 @@ export const Features: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="diferenciais" className={`galax-method-section py-20 md:py-28 relative overflow-hidden scroll-mt-24 ${isVisible ? 'is-visible' : ''}`}>
+    <section ref={sectionRef} id="diferenciais" className={`galax-method-section py-16 md:py-20 relative overflow-hidden scroll-mt-24 ${isVisible ? 'is-visible' : ''}`}>
       <div className="galax-method-glow galax-method-glow-one absolute" />
       <div className="galax-method-glow galax-method-glow-two absolute" />
 
