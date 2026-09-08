@@ -66,7 +66,7 @@ export const Features: React.FC = () => {
         <div className="galax-method-flow" aria-label="Etapas do Método Galax">
           <div className="galax-method-flow-line" />
           <svg className="galax-method-flow-path" viewBox="0 0 1120 560" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M 150 82 C 105 180, 105 290, 205 390 C 310 500, 730 130, 960 82 C 1040 170, 1020 300, 930 390 C 840 480, 690 485, 560 510" />
+            <path d="M 150 82 C 105 180, 105 290, 205 390 C 310 485, 450 520, 560 510 C 700 520, 840 485, 930 390 C 1020 300, 1010 180, 960 82" />
           </svg>
           <div className="galax-method-core"><span>MÉTODO</span><strong>GALAX</strong><small>tudo conectado</small></div>
 
