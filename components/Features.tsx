@@ -1,17 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight, BarChart3, Globe2, RefreshCw, Target, Zap } from 'lucide-react';
+import { ArrowRight, BarChart3, Check, ChevronDown, Globe2, RefreshCw, Target, Zap } from 'lucide-react';
 
 const methodSteps = [
-  { number: '01', title: 'Estrutura', headline: 'Sua marca começa aqui.', tags: 'Google • Instagram • Site', detail: 'Presença digital sólida e profissional.', icon: Globe2 },
-  { number: '02', title: 'Estratégia', headline: 'Cada ação tem um porquê.', tags: 'Conteúdo • Posicionamento', detail: 'Direção clara para chegar mais longe.', icon: Target },
-  { number: '03', title: 'Execução', headline: 'Tirar a estratégia do papel.', tags: 'Criativos • Campanhas • SEO', detail: 'Ideias colocadas para funcionar.', icon: Zap },
-  { number: '04', title: 'Aquisição', headline: 'Sua empresa na frente das pessoas certas.', tags: 'Tráfego Pago • Leads', detail: 'Aceleramos o que pode gerar negócio.', icon: BarChart3 },
-  { number: '05', title: 'Otimização', headline: 'Medir. Ajustar. Crescer.', tags: 'Dados • Testes • Performance', detail: 'O que funciona, escala. O resto, muda.', icon: RefreshCw },
+  { number: '01', title: 'Estrutura', headline: 'Sua marca começa aqui.', tags: 'Google • Instagram • Site', detail: 'Presença digital sólida e profissional.', closing: 'Primeiro, construímos a base. Depois, fazemos ela trabalhar.', icon: Globe2, details: ['Configuração da presença no Google', 'Google Perfil da Empresa', 'Instagram e Facebook', 'Site e landing pages', 'Organização das informações da empresa', 'Padronização da presença digital', 'Posicionamento da marca no ambiente digital', 'Base para o cliente encontrar e confiar'] },
+  { number: '02', title: 'Estratégia', headline: 'Cada ação tem um porquê.', tags: 'Conteúdo • Posicionamento', detail: 'Direção clara para chegar mais longe.', closing: 'Nada é publicado ou anunciado por acaso.', icon: Target, details: ['Definição de objetivos', 'Posicionamento e público', 'Planejamento de conteúdo', 'Calendário estratégico', 'Análise do mercado e oportunidades', 'Planejamento de campanhas', 'Estratégia de aquisição e conversão'] },
+  { number: '03', title: 'Execução', headline: 'Tirar a estratégia do papel.', tags: 'Criativos • Campanhas • SEO', detail: 'Ideias colocadas para funcionar.', closing: 'Estratégia sem execução é apenas planejamento.', icon: Zap, details: ['Criação de conteúdos', 'Reels, vídeos e criativos', 'Copywriting e campanhas promocionais', 'Conteúdo institucional', 'Gestão das redes sociais', 'SEO e atualizações do site', 'Landing pages e implementação'] },
+  { number: '04', title: 'Aquisição', headline: 'Sua empresa na frente das pessoas certas.', tags: 'Tráfego Pago • Leads', detail: 'Aceleramos o que pode gerar negócio.', closing: 'Investimos onde existe oportunidade de gerar negócio.', icon: BarChart3, details: ['Meta Ads e Google Ads', 'Campanhas para WhatsApp', 'Geração de leads e conversão', 'Remarketing e segmentação', 'Testes de anúncios e criativos', 'Otimização de campanhas'] },
+  { number: '05', title: 'Otimização', headline: 'Medir. Ajustar. Crescer.', tags: 'Dados • Testes • Performance', detail: 'O que funciona, escala. O resto, muda.', closing: 'O que funciona, potencializamos. O que não funciona, ajustamos.', icon: RefreshCw, details: ['Monitoramento de resultados', 'Análise de métricas e campanhas', 'Acompanhamento de leads', 'Identificação do que funciona', 'Testes e ajustes', 'Otimização de anúncios e conteúdo', 'Novas oportunidades estratégicas'] },
 ];
 
 export const Features: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [openStep, setOpenStep] = useState<string | null>(null);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -52,13 +53,28 @@ export const Features: React.FC = () => {
           {methodSteps.map((step, index) => {
             const Icon = step.icon;
             return (
-              <article key={step.number} className={`galax-method-step galax-method-step-${index + 1}`} style={{ '--step-delay': `${index * 110}ms` } as React.CSSProperties}>
+              <article key={step.number} className={`galax-method-step galax-method-step-${index + 1} ${openStep === step.number ? 'is-open' : ''}`} style={{ '--step-delay': `${index * 110}ms` } as React.CSSProperties}>
                 <div className="galax-method-step-icon"><Icon size={22} strokeWidth={1.6} /></div>
                 <div className="galax-method-step-copy">
                   <div className="galax-method-step-meta"><span>{step.number}</span><b>{step.title}</b></div>
                   <h3>{step.headline}</h3>
                   <p className="galax-method-tags">{step.tags}</p>
                   <p className="galax-method-detail">{step.detail}</p>
+                  <button
+                    type="button"
+                    className="galax-method-expand"
+                    aria-expanded={openStep === step.number}
+                    onClick={() => setOpenStep((current) => current === step.number ? null : step.number)}
+                  >
+                    <span>{openStep === step.number ? 'Fechar etapa' : 'Explorar esta etapa'}</span>
+                    <ChevronDown size={15} />
+                  </button>
+                  <div className="galax-method-details" aria-hidden={openStep !== step.number}>
+                    <ul>
+                      {step.details.map((item) => <li key={item}><Check size={13} />{item}</li>)}
+                    </ul>
+                    <p>{step.closing}</p>
+                  </div>
                 </div>
               </article>
             );
