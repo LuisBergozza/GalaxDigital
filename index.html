@@ -1029,6 +1029,33 @@
       .theme-light .galax-method-core small { color: rgba(255, 255, 255, .72); }
       .theme-light .galax-together { border-color: rgba(23, 19, 31, .12); }
       .theme-light .galax-method-cta { color: #282234; }
+      .galax-profile-layout { display: grid; grid-template-columns: minmax(240px, .82fr) minmax(0, 1.18fr); gap: 54px; align-items: center; }
+      .galax-profile-heading h2 { color: var(--method-ink, #ffffff); }
+      .galax-profile-intro { max-width: 300px; margin: 18px 0 0; color: #8d8797; font-size: 14px; line-height: 1.55; }
+      .galax-profile-points { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .galax-profile-point { display: flex; align-items: flex-start; gap: 11px; min-height: 82px; padding: 16px; border: 1px solid rgba(255, 255, 255, .08); border-radius: 14px; background: rgba(255, 255, 255, .035); transition: border-color .25s ease, background .25s ease, transform .25s ease; }
+      .galax-profile-point:hover { border-color: rgba(168, 121, 255, .5); background: rgba(83, 0, 255, .08); transform: translateY(-2px); }
+      .galax-profile-point-icon { display: grid; width: 28px; height: 28px; flex: 0 0 28px; place-items: center; border-radius: 50%; color: #c4a9ff; background: rgba(83, 0, 255, .18); }
+      .galax-profile-point p { margin: 2px 0 0; color: #c4bfca; font-size: 13px; line-height: 1.4; }
+      .galax-profile-quote { grid-column: 1 / -1; margin: 36px auto 0; padding-left: 16px; border-left: 3px solid #7c3aed; color: #a9a2b1; }
+      .galax-profile-quote p { margin: 0; font-size: 15px; font-style: italic; line-height: 1.5; }
+      .theme-light .galax-profile-section { background: #f7f7fb !important; }
+      .theme-light .galax-profile-heading h2 { color: #282234 !important; }
+      .theme-light .galax-profile-intro { color: #5c5368; }
+      .theme-light .galax-profile-point { border-color: rgba(23, 19, 31, .1); background: #ffffff; }
+      .theme-light .galax-profile-point p { color: #51495e; }
+      .theme-light .galax-profile-point-icon { color: #5300ff; background: rgba(83, 0, 255, .08); }
+      .theme-light .galax-profile-quote { color: #5c5368; }
+      @media (max-width: 767px) {
+        .galax-profile-layout { display: block; }
+        .galax-profile-heading { margin-bottom: 30px; }
+        .galax-profile-intro { margin-top: 14px; font-size: 13px; }
+        .galax-profile-points { grid-template-columns: 1fr; gap: 8px; }
+        .galax-profile-point { min-height: 0; padding: 13px; }
+        .galax-profile-point p { font-size: 13px; }
+        .galax-profile-quote { margin-top: 28px; }
+        .galax-profile-quote p { font-size: 14px; }
+      }
       @media (max-width: 767px) {
         .theme-light .galax-method-glow { opacity: .04; }
         .theme-light .galax-method-step,
