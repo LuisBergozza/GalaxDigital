@@ -868,9 +868,9 @@
         position: absolute;
         z-index: 3;
         display: flex;
-        width: 245px;
-        gap: 13px;
-        padding: 17px;
+        width: 280px;
+        gap: 15px;
+        padding: 20px;
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 14px;
         background: var(--method-surface);
@@ -882,7 +882,7 @@
       }
       .is-visible .galax-method-step { opacity: 1; transform: translateY(0); }
       .galax-method-step:hover { border-color: rgba(168, 121, 255, 0.65); }
-      .galax-method-step.is-open { z-index: 20; width: 310px; border-color: rgba(168, 121, 255, 0.7); background: rgba(18, 8, 35, 0.94); box-shadow: 0 18px 45px rgba(0, 0, 0, .38), 0 0 28px rgba(83, 0, 255, .18); }
+      .galax-method-step.is-open { z-index: 20; width: 350px; border-color: rgba(168, 121, 255, 0.7); background: rgba(18, 8, 35, 0.94); box-shadow: 0 18px 45px rgba(0, 0, 0, .38), 0 0 28px rgba(83, 0, 255, .18); }
       .galax-method-step-1 { top: 2%; left: 2%; }
       .galax-method-step-2 { bottom: 22%; left: 10%; }
       .galax-method-step-3 { top: 2%; right: 2%; }
@@ -902,21 +902,21 @@
         box-shadow: 0 0 18px rgba(83, 0, 255, 0.22);
       }
       .galax-method-step-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
-      .galax-method-step-meta span { color: #a879ff; font-size: 10px; letter-spacing: .12em; }
-      .galax-method-step-meta b { color: var(--method-ink); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
-      .galax-method-step h3 { margin: 0 0 7px; color: var(--method-ink); font-size: 14px; line-height: 1.25; }
-      .galax-method-tags { margin: 0; color: #c4a9ff; font-size: 10px; line-height: 1.4; }
-      .galax-method-detail { margin: 7px 0 0; color: var(--method-muted); font-size: 11px; line-height: 1.35; }
-      .galax-method-expand { display: inline-flex; align-items: center; gap: 7px; margin-top: 13px; padding: 0; border: 0; color: #c4a9ff; background: transparent; cursor: pointer; font: inherit; font-size: 10px; font-weight: 700; letter-spacing: .04em; }
+      .galax-method-step-meta span { color: #a879ff; font-size: 11px; letter-spacing: .12em; }
+      .galax-method-step-meta b { color: var(--method-ink); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+      .galax-method-step h3 { margin: 0 0 8px; color: var(--method-ink); font-size: 16px; line-height: 1.28; }
+      .galax-method-tags { margin: 0; color: #c4a9ff; font-size: 11px; line-height: 1.45; }
+      .galax-method-detail { margin: 8px 0 0; color: var(--method-muted); font-size: 12px; line-height: 1.4; }
+      .galax-method-expand { display: inline-flex; align-items: center; gap: 7px; margin-top: 15px; padding: 0; border: 0; color: #c4a9ff; background: transparent; cursor: pointer; font: inherit; font-size: 11px; font-weight: 700; letter-spacing: .04em; }
       .galax-method-expand svg { transition: transform .3s ease; }
       .galax-method-step.is-open .galax-method-expand svg { transform: rotate(180deg); }
       .galax-method-expand:hover { color: #ffffff; }
       .galax-method-details { max-height: 0; overflow: hidden; opacity: 0; transition: max-height .45s ease, opacity .3s ease, margin-top .3s ease; }
       .galax-method-step.is-open .galax-method-details { max-height: 360px; margin-top: 14px; opacity: 1; }
       .galax-method-details ul { display: grid; gap: 7px; margin: 0; padding: 12px 0 0; border-top: 1px solid rgba(255, 255, 255, .12); list-style: none; }
-      .galax-method-details li { display: flex; align-items: flex-start; gap: 7px; color: rgba(255, 255, 255, .76); font-size: 10px; line-height: 1.25; }
+      .galax-method-details li { display: flex; align-items: flex-start; gap: 8px; color: rgba(255, 255, 255, .76); font-size: 11px; line-height: 1.35; }
       .galax-method-details li svg { flex: 0 0 auto; margin-top: 1px; color: #a879ff; }
-      .galax-method-details > p { margin: 13px 0 0; color: #c4a9ff; font-size: 10px; font-style: italic; line-height: 1.35; }
+      .galax-method-details > p { margin: 14px 0 0; color: #c4a9ff; font-size: 11px; font-style: italic; line-height: 1.4; }
       .galax-together {
         display: flex;
         align-items: center;
@@ -962,13 +962,16 @@
         .galax-method-step-icon { width: 40px; height: 40px; margin-left: 0; background: #16052d; }
         .galax-method-step-copy { padding-left: 2px; }
         .galax-method-step-meta { margin-bottom: 5px; }
-        .galax-method-step h3 { font-size: 15px; }
-        .galax-method-tags { font-size: 10px; }
-        .galax-method-detail { max-width: 250px; font-size: 11px; }
-        .galax-method-expand { margin-top: 12px; min-height: 28px; padding: 4px 0; }
+        .galax-method-step h3 { font-size: 16px; }
+        .galax-method-step-meta span { font-size: 11px; }
+        .galax-method-step-meta b { font-size: 12px; }
+        .galax-method-tags { font-size: 11px; }
+        .galax-method-detail { max-width: 280px; font-size: 12px; }
+        .galax-method-expand { margin-top: 13px; min-height: 30px; padding: 4px 0; font-size: 11px; }
         .galax-method-step.is-open .galax-method-details { max-height: 480px; }
         .galax-method-details ul { gap: 8px; padding-top: 13px; }
-        .galax-method-details li { font-size: 11px; }
+        .galax-method-details li { font-size: 12px; line-height: 1.4; }
+        .galax-method-details > p { font-size: 12px; }
         .galax-together { display: block; margin-bottom: 58px; padding: 26px 0; }
         .galax-together-copy { margin-bottom: 30px; }
         .galax-together-system { gap: 7px; justify-content: space-between; }
