@@ -811,18 +811,35 @@
         margin: 54px auto 76px;
       }
       .galax-method-flow-line {
-        position: absolute;
-        top: 42%;
-        left: 8%;
-        right: 8%;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, #7c3aed 16%, #a879ff 50%, #5300ff 84%, transparent);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 1.5s cubic-bezier(.22, 1, .36, 1);
-        box-shadow: 0 0 18px rgba(124, 58, 237, 0.7);
+        display: none;
       }
-      .is-visible .galax-method-flow-line { transform: scaleX(1); }
+      .galax-method-flow-path {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        pointer-events: none;
+      }
+      .galax-method-flow-path path {
+        fill: none;
+        stroke: #9d6eff;
+        stroke-width: 1.4;
+        stroke-linecap: round;
+        stroke-dasharray: 1900;
+        stroke-dashoffset: 0;
+        filter: drop-shadow(0 0 8px rgba(124, 58, 237, .75));
+        transition: stroke-dashoffset 1.8s cubic-bezier(.22, 1, .36, 1);
+      }
+      .is-visible .galax-method-flow-path path { stroke-dashoffset: 0; }
+      .galax-method-flow-line {
+        position: absolute;
+        top: 0;
+        left: 19px;
+        width: 1px;
+        height: 100%;
+      }
       .galax-method-flow-line::after {
         content: '';
         position: absolute;
@@ -952,7 +969,8 @@
         .galax-method-header { text-align: left; }
         .galax-method-header p { margin-left: 0; }
         .galax-method-flow { min-height: 0; margin: 38px 0 58px; padding-left: 19px; }
-        .galax-method-flow-line { top: 0; bottom: 0; left: 19px; right: auto; width: 1px; height: auto; background: linear-gradient(180deg, transparent, #7c3aed 8%, #a879ff 50%, #5300ff 92%, transparent); transform: scaleY(0); transform-origin: top; transition: transform 1.5s ease; }
+        .galax-method-flow-path { display: none; }
+        .galax-method-flow-line { display: block; top: 0; bottom: 0; left: 19px; right: auto; width: 1px; height: auto; background: linear-gradient(180deg, transparent, #7c3aed 8%, #a879ff 50%, #5300ff 92%, transparent); transform: scaleY(0); transform-origin: top; transition: transform 1.5s ease; }
         .is-visible .galax-method-flow-line { transform: scaleY(1); }
         .galax-method-flow-line::after { top: 0; left: -3px; animation: methodPulseVertical 4s ease-in-out infinite; }
         .galax-method-core { display: none; }
@@ -985,7 +1003,7 @@
       }
       @keyframes methodPulseVertical { 0%, 100% { top: 0; opacity: .5; } 50% { top: calc(100% - 7px); opacity: 1; } }
       @media (prefers-reduced-motion: reduce) {
-        .galax-method-flow-line, .galax-method-step, .galax-method-core::before, .galax-method-flow-line::after { animation: none !important; transition: none !important; }
+        .galax-method-flow-line, .galax-method-flow-path path, .galax-method-step, .galax-method-core::before, .galax-method-flow-line::after { animation: none !important; transition: none !important; stroke-dashoffset: 0 !important; }
         .galax-method-step { opacity: 1 !important; transform: none !important; }
       }
       .theme-light .galax-method-section { --method-ink: #282234; --method-muted: #5c5368; --method-line: rgba(83, 0, 255, .2); --method-surface: rgba(255, 255, 255, .8); background: #f7f7fb; }

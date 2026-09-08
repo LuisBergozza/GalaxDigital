@@ -17,14 +17,31 @@ export const Features: React.FC = () => {
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
+
+    const revealWhenVisible = () => {
+      const bounds = section.getBoundingClientRect();
+      if (bounds.top < window.innerHeight * 0.9 && bounds.bottom > 0) {
+        setIsVisible(true);
+        window.removeEventListener('scroll', revealWhenVisible);
+      }
+    };
+
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setIsVisible(true);
         observer.disconnect();
+        window.removeEventListener('scroll', revealWhenVisible);
       }
-    }, { threshold: 0.16 });
+    }, { threshold: 0.01, rootMargin: '0px 0px 120px 0px' });
+
     observer.observe(section);
-    return () => observer.disconnect();
+    window.addEventListener('scroll', revealWhenVisible, { passive: true });
+    revealWhenVisible();
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', revealWhenVisible);
+    };
   }, []);
 
   return (
@@ -48,6 +65,9 @@ export const Features: React.FC = () => {
 
         <div className="galax-method-flow" aria-label="Etapas do Método Galax">
           <div className="galax-method-flow-line" />
+          <svg className="galax-method-flow-path" viewBox="0 0 1120 560" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M 150 82 C 105 180, 105 290, 205 390 C 310 500, 730 130, 960 82 C 1040 170, 1020 300, 930 390 C 840 480, 690 485, 560 510" />
+          </svg>
           <div className="galax-method-core"><span>MÉTODO</span><strong>GALAX</strong><small>tudo conectado</small></div>
 
           {methodSteps.map((step, index) => {
