@@ -970,6 +970,7 @@
       @keyframes methodSpin { to { transform: rotate(360deg); } }
       @media (max-width: 767px) {
         .galax-method-section { padding-top: 72px; }
+        .galax-method-glow { opacity: .08; filter: blur(90px); }
         .galax-method-header { text-align: left; }
         .galax-method-header p { margin-left: 0; }
         .galax-method-flow { min-height: 0; margin: 38px 0 58px; padding-left: 19px; }
@@ -1011,6 +1012,7 @@
         .galax-method-step { opacity: 1 !important; transform: none !important; }
       }
       .theme-light .galax-method-section { --method-ink: #282234; --method-muted: #5c5368; --method-line: rgba(83, 0, 255, .2); --method-surface: rgba(255, 255, 255, .8); background: #f7f7fb; }
+      .theme-light .galax-method-glow { opacity: .12; }
       .theme-light .galax-method-kicker { background: rgba(83, 0, 255, .06); border-color: rgba(83, 0, 255, .18); }
       .theme-light .galax-method-step { border-color: rgba(23, 19, 31, .12); box-shadow: 0 10px 30px rgba(23, 19, 31, .04); }
       .theme-light .galax-method-step-meta b, .theme-light .galax-method-step h3, .theme-light .galax-together-node b { color: #282234 !important; }
@@ -1028,6 +1030,7 @@
       .theme-light .galax-together { border-color: rgba(23, 19, 31, .12); }
       .theme-light .galax-method-cta { color: #282234; }
       @media (max-width: 767px) {
+        .theme-light .galax-method-glow { opacity: .04; }
         .theme-light .galax-method-step,
         .theme-light .galax-method-step:hover { border: 0; background: transparent; box-shadow: none; }
         .theme-light .galax-method-step.is-open { border: 0; border-bottom: 1px solid rgba(83, 0, 255, .2); background: transparent; box-shadow: none; }
