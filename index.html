@@ -297,7 +297,7 @@
       }
       .hero-method {
         right: 28%;
-        top: 25%;
+        top: calc(50% + 2.5rem);
         width: min(30vw, 380px);
         min-height: 330px;
         padding: 30px;
@@ -307,7 +307,7 @@
         border-radius: 18px;
         box-shadow: 0 20px 80px rgba(4, 0, 20, 0.45), inset 0 1px rgba(255, 255, 255, 0.08);
         backdrop-filter: blur(12px);
-        transform: perspective(900px) rotateY(-8deg) rotateX(2deg);
+        transform: translateY(-50%) perspective(900px) rotateY(-8deg) rotateX(2deg);
       }
 
       /* Versão estática do card no mobile (fora do overlay decorativo) */
