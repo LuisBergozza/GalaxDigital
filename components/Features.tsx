@@ -44,6 +44,20 @@ export const Features: React.FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (!openStep) return;
+
+    const handleOutsidePointer = (event: PointerEvent) => {
+      const target = event.target;
+      if (target instanceof Element && !target.closest('.galax-method-step')) {
+        setOpenStep(null);
+      }
+    };
+
+    document.addEventListener('pointerdown', handleOutsidePointer);
+    return () => document.removeEventListener('pointerdown', handleOutsidePointer);
+  }, [openStep]);
+
   return (
     <section ref={sectionRef} id="diferenciais" className={`galax-method-section py-16 md:py-20 relative overflow-hidden scroll-mt-24 ${isVisible ? 'is-visible' : ''}`}>
       <div className="galax-method-glow galax-method-glow-one absolute" />
