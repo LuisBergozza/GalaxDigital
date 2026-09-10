@@ -80,6 +80,7 @@ export const Footer: React.FC<FooterProps> = ({ isLightMode = false }) => {
             <h4 className="text-white font-bold text-lg mb-6">Navegação</h4>
             <ul className="space-y-3">
               <FooterLink href="#servicos">Nossos Serviços</FooterLink>
+              <FooterLink href="#portfolio">Portfólio</FooterLink>
               <FooterLink href="#diferenciais">Diferenciais</FooterLink>
               <FooterLink href="#resultados">Para quem somos</FooterLink>
               <FooterLink href="#contato">Fale Conosco</FooterLink>
