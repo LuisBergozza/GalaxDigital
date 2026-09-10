@@ -7,6 +7,7 @@ interface PortfolioProject {
   description: string;
   visual: string;
   color: string;
+  image?: string;
   url?: string;
 }
 
@@ -24,6 +25,7 @@ const projects: PortfolioProject[] = [
     description: 'Presença digital para varejo, campanhas comerciais e comunicação de uma empresa regional.',
     visual: 'REAL CENTER',
     color: '#2558a8',
+    image: '/portfolio/FireShot Capture 001 - Real Center - Materiais de Construção e Acabamentos em Concórdia SC_ - [www.realcenterconcordia.com.br].png',
     url: 'https://www.realcenterconcordia.com.br',
   },
   {
@@ -32,6 +34,7 @@ const projects: PortfolioProject[] = [
     description: 'Projeto de posicionamento e comunicação para planejamento financeiro e investimentos.',
     visual: 'PRIMUS',
     color: '#176d68',
+    image: '/portfolio/FireShot Capture 002 - Primus Planejamento Financeiro - Concórdia, Jaraguá do Sul e Pato B_ - [primusplanejamento.com.br].png',
     url: 'https://primusplanejamento.com.br',
   },
   {
@@ -40,6 +43,7 @@ const projects: PortfolioProject[] = [
     description: 'Identidade e experiência digital para apresentar uma marca com clareza e personalidade.',
     visual: 'MARVET',
     color: '#d15c3f',
+    image: '/portfolio/marvet.png',
     url: 'https://www.marvet.com.br',
   },
   {
@@ -69,6 +73,7 @@ const projects: PortfolioProject[] = [
     description: 'Base da agência e laboratório de soluções digitais para marcas, campanhas e desenvolvimento web.',
     visual: 'GALAX',
     color: '#7756e8',
+    image: '/portfolio/galax.png',
     url: 'https://www.galaxdigital.com.br',
   },
 ];
@@ -93,6 +98,17 @@ export const Portfolio: React.FC = () => {
           {projects.map((project, index) => (
             <article key={project.name} className="group overflow-hidden rounded-2xl border border-white/10 bg-[#0d0d0d] transition-all duration-500 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_24px_70px_-30px_rgba(83,0,255,0.8)]">
               <div className="relative flex aspect-[16/9] items-center justify-center overflow-hidden" style={{ backgroundColor: project.color }}>
+                {project.image ? (
+                  <img
+                    src={encodeURI(project.image)}
+                    alt={`Prévia do site ${project.name}`}
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                ) : (
+                  <strong className="relative px-6 text-center text-3xl font-black tracking-[0.12em] text-white drop-shadow-lg transition-transform duration-500 group-hover:scale-110 md:text-5xl">{project.visual}</strong>
+                )}
                 <div className="absolute inset-0 bg-black/20 transition-colors duration-500 group-hover:bg-black/5" />
                 <div className="absolute left-5 right-5 top-5 flex items-center gap-2 border-b border-white/30 pb-3" aria-hidden="true">
                   <span className="h-2.5 w-2.5 rounded-full bg-white/80" />
@@ -100,7 +116,6 @@ export const Portfolio: React.FC = () => {
                   <span className="h-2.5 w-2.5 rounded-full bg-white/30" />
                   <span className="ml-auto text-[10px] font-medium uppercase tracking-[0.18em] text-white/70">preview / {String(index + 1).padStart(2, '0')}</span>
                 </div>
-                <strong className="relative px-6 text-center text-3xl font-black tracking-[0.12em] text-white drop-shadow-lg transition-transform duration-500 group-hover:scale-110 md:text-5xl">{project.visual}</strong>
               </div>
 
               <div className="p-6 md:p-7">
