@@ -30,11 +30,11 @@ const App: React.FC = () => {
   }, [isLightMode]);
 
   return (
-    <div className={`min-h-screen bg-[#050505] text-white selection:bg-primary selection:text-white ${isLightMode ? 'theme-light' : ''}`}>
+    <div className={`min-h-screen selection:bg-primary selection:text-white ${isLightMode ? 'theme-light bg-[#f7f7fb] text-[#17131f]' : 'bg-[#050505] text-white'}`}>
       <Navbar isLightMode={isLightMode} onToggleTheme={() => setIsLightMode((current) => !current)} />
       {isPortfolioPage ? (
         <main className="pt-24">
-          <Portfolio />
+          <Portfolio isLightMode={isLightMode} />
         </main>
       ) : (
         <main>

@@ -45,30 +45,34 @@ const projects: PortfolioProject[] = [
     description: 'Base da agência e laboratório de soluções digitais para marcas, campanhas e desenvolvimento web.',
     visual: 'GALAX',
     color: '#7756e8',
-    image: '/portfolio/galax.webp',
+    image: '/portfolio/galax-current.webp',
     url: 'https://www.galaxdigital.com.br',
   },
 ];
 
-export const Portfolio: React.FC = () => {
+interface PortfolioProps {
+  isLightMode: boolean;
+}
+
+export const Portfolio: React.FC<PortfolioProps> = ({ isLightMode }) => {
   return (
-    <section id="portfolio" className="relative scroll-mt-24 bg-[#080808] py-20 md:py-28">
+    <section id="portfolio" className={`relative scroll-mt-24 py-20 md:py-28 ${isLightMode ? 'bg-[#f7f7fb]' : 'bg-[#080808]'}`}>
       <div className="container mx-auto px-6 sm:px-8 md:px-10 lg:px-12">
         <div className="mb-12 flex flex-col gap-5 md:mb-16 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-primary">Trabalhos selecionados / 2023 - atual</p>
             <h2 className="text-4xl font-bold leading-tight text-white md:text-6xl">
-              Portfólio<span className="text-primary">.</span>
+              <span className={isLightMode ? 'text-[#17131f]' : 'text-white'}>Portfólio</span><span className="text-primary">.</span>
             </h2>
           </div>
-          <p className="max-w-md text-base leading-relaxed text-gray-400 md:text-right">
+          <p className={`max-w-md text-base leading-relaxed md:text-right ${isLightMode ? 'text-[#625a6d]' : 'text-gray-400'}`}>
             Sites, marcas e produtos digitais pensados para transformar uma ideia em uma presença online clara, funcional e com personalidade.
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {projects.map((project, index) => (
-            <article key={project.name} className="group overflow-hidden rounded-2xl border border-white/10 bg-[#0d0d0d] transition-all duration-500 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_24px_70px_-30px_rgba(83,0,255,0.8)]">
+            <article key={project.name} className={`group overflow-hidden rounded-2xl border transition-all duration-500 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_24px_70px_-30px_rgba(83,0,255,0.8)] ${isLightMode ? 'border-[#ded8e8] bg-white' : 'border-white/10 bg-[#0d0d0d]'}`}>
               <div className="relative flex aspect-[16/9] items-center justify-center overflow-hidden" style={{ backgroundColor: project.color }}>
                 {project.image ? (
                   <img
@@ -91,14 +95,14 @@ export const Portfolio: React.FC = () => {
               </div>
 
               <div className="p-6 md:p-7">
-                <div className="mb-4 flex items-center justify-between gap-4 text-xs font-semibold uppercase tracking-[0.14em] text-gray-500">
+                <div className={`mb-4 flex items-center justify-between gap-4 text-xs font-semibold uppercase tracking-[0.14em] ${isLightMode ? 'text-[#81778e]' : 'text-gray-500'}`}>
                   <span>{String(index + 1).padStart(2, '0')}</span>
                   <span className="text-right">{project.category}</span>
                 </div>
-                <h3 className="mb-3 text-2xl font-bold text-white">{project.name}</h3>
-                <p className="mb-6 max-w-lg leading-relaxed text-gray-400">{project.description}</p>
+                <h3 className={`mb-3 text-2xl font-bold ${isLightMode ? 'text-[#17131f]' : 'text-white'}`}>{project.name}</h3>
+                <p className={`mb-6 max-w-lg leading-relaxed ${isLightMode ? 'text-[#625a6d]' : 'text-gray-400'}`}>{project.description}</p>
                 {project.url ? (
-                  <a href={project.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-primary">
+                  <a href={project.url} target="_blank" rel="noreferrer" className={`inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:text-primary ${isLightMode ? 'text-[#17131f]' : 'text-white'}`}>
                     Abrir site <ExternalLink size={15} />
                   </a>
                 ) : (
