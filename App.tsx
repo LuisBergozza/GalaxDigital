@@ -15,6 +15,7 @@ const App: React.FC = () => {
   const [isLightMode, setIsLightMode] = useState(() => {
     return window.localStorage.getItem('galax-theme') === 'light';
   });
+  const isPortfolioPage = window.location.pathname === '/portfolio';
 
   useEffect(() => {
     window.localStorage.setItem('galax-theme', isLightMode ? 'light' : 'dark');
@@ -31,16 +32,21 @@ const App: React.FC = () => {
   return (
     <div className={`min-h-screen bg-[#050505] text-white selection:bg-primary selection:text-white ${isLightMode ? 'theme-light' : ''}`}>
       <Navbar isLightMode={isLightMode} onToggleTheme={() => setIsLightMode((current) => !current)} />
-      <main>
-        <Hero />
-        <TrustBar />
-        <Services />
-        <Features />
-        <Portfolio />
-        {/* <Testimonials /> */}
-        <TargetAudience />
-        <Contact />
-      </main>
+      {isPortfolioPage ? (
+        <main className="pt-24">
+          <Portfolio />
+        </main>
+      ) : (
+        <main>
+          <Hero />
+          <TrustBar />
+          <Services />
+          <Features />
+          {/* <Testimonials /> */}
+          <TargetAudience />
+          <Contact />
+        </main>
+      )}
       <Footer isLightMode={isLightMode} />
       <FloatingWhatsApp />
     </div>

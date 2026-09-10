@@ -31,12 +31,14 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) =>
     };
   }, [isOpen]);
 
+  const isPortfolioPage = window.location.pathname === '/portfolio';
   const navLinks = [
-    { name: 'Soluções', href: '#servicos' },
-    { name: 'Portfólio', href: '#portfolio' },
-    { name: 'Diferenciais', href: '#diferenciais' },
-    { name: 'Para quem somos', href: '#resultados' },
+    { name: 'Soluções', href: isPortfolioPage ? '/#servicos' : '#servicos' },
+    { name: 'Portfólio', href: '/portfolio' },
+    { name: 'Diferenciais', href: isPortfolioPage ? '/#diferenciais' : '#diferenciais' },
+    { name: 'Para quem somos', href: isPortfolioPage ? '/#resultados' : '#resultados' },
   ];
+  const contactHref = isPortfolioPage ? '/#contato' : '#contato';
 
   return (
     <div className={`fixed top-0 left-0 right-0 z-50 flex justify-center px-4 transition-all duration-500 ${scrolled ? 'pt-2' : 'pt-4 md:pt-6'}`}>
@@ -49,7 +51,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) =>
       >
         <div className={`px-4 md:px-6 flex justify-between items-center transition-all duration-500 ${scrolled ? 'py-2' : 'py-3 md:py-4'}`}>
           {/* Logo */}
-          <a href="#" className="flex items-center group z-50">
+          <a href="/" className="flex items-center group z-50">
             <img
               src={isLightMode ? '/logo preta.png' : '/logo-navbar-320.webp'}
               alt="Galax Digital"
@@ -89,7 +91,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) =>
             >
               {isLightMode ? <Moon size={18} /> : <Sun size={18} />}
             </button>
-            <a href="#contato">
+            <a href={contactHref}>
               <Button size="sm" variant="primary" className={`rounded-lg transition-all duration-500 ${scrolled ? 'px-5' : 'px-6'}`}>
                 Falar com Especialista
               </Button>
@@ -123,7 +125,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) =>
                 </a>
               ))}
               <a
-                href="#contato"
+                href={contactHref}
                 onClick={() => setIsOpen(false)}
                 className="mt-4 block"
               >
