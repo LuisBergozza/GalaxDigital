@@ -31,7 +31,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) =>
     };
   }, [isOpen]);
 
-  const isPortfolioPage = window.location.pathname === '/portfolio';
+  const isPortfolioPage = window.location.pathname === '/portfolio' || window.location.pathname === '/portfolio/';
   const navLinks = [
     { name: 'Soluções', href: isPortfolioPage ? '/#servicos' : '#servicos' },
     { name: 'Portfólio', href: '/portfolio' },
@@ -58,7 +58,6 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) =>
               width={160}
               height={56}
               loading="eager"
-              fetchPriority="high"
               decoding="async"
               className={`transition-all duration-500 object-contain block ${scrolled ? 'h-11' : 'h-12 md:h-14'}`}
               style={{ verticalAlign: 'middle' }}

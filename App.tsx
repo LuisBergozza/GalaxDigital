@@ -15,7 +15,7 @@ const App: React.FC = () => {
   const [isLightMode, setIsLightMode] = useState(() => {
     return window.localStorage.getItem('galax-theme') === 'light';
   });
-  const isPortfolioPage = window.location.pathname === '/portfolio';
+  const isPortfolioPage = window.location.pathname === '/portfolio' || window.location.pathname === '/portfolio/';
 
   useEffect(() => {
     window.localStorage.setItem('galax-theme', isLightMode ? 'light' : 'dark');

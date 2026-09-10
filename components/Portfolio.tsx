@@ -25,7 +25,7 @@ const projects: PortfolioProject[] = [
     description: 'Presença digital para varejo, campanhas comerciais e comunicação de uma empresa regional.',
     visual: 'REAL CENTER',
     color: '#2558a8',
-    image: '/portfolio/FireShot Capture 001 - Real Center - Materiais de Construção e Acabamentos em Concórdia SC_ - [www.realcenterconcordia.com.br].png',
+    image: '/portfolio/real-center.webp',
     url: 'https://www.realcenterconcordia.com.br',
   },
   {
@@ -34,7 +34,7 @@ const projects: PortfolioProject[] = [
     description: 'Projeto de posicionamento e comunicação para planejamento financeiro e investimentos.',
     visual: 'PRIMUS',
     color: '#176d68',
-    image: '/portfolio/FireShot Capture 002 - Primus Planejamento Financeiro - Concórdia, Jaraguá do Sul e Pato B_ - [primusplanejamento.com.br].png',
+    image: '/portfolio/primus.webp',
     url: 'https://primusplanejamento.com.br',
   },
   {
@@ -43,7 +43,7 @@ const projects: PortfolioProject[] = [
     description: 'Identidade e experiência digital para apresentar uma marca com clareza e personalidade.',
     visual: 'MARVET',
     color: '#d15c3f',
-    image: '/portfolio/marvet.png',
+    image: '/portfolio/marvet.webp',
     url: 'https://www.marvet.com.br',
   },
   {
@@ -73,7 +73,7 @@ const projects: PortfolioProject[] = [
     description: 'Base da agência e laboratório de soluções digitais para marcas, campanhas e desenvolvimento web.',
     visual: 'GALAX',
     color: '#7756e8',
-    image: '/portfolio/galax.png',
+    image: '/portfolio/galax.webp',
     url: 'https://www.galaxdigital.com.br',
   },
 ];
