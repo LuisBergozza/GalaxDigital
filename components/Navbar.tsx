@@ -34,9 +34,9 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) =>
   const isPortfolioPage = window.location.pathname === '/portfolio' || window.location.pathname === '/portfolio/';
   const navLinks = [
     { name: 'Soluções', href: isPortfolioPage ? '/#servicos' : '#servicos' },
-    { name: 'Portfólio', href: '/portfolio' },
     { name: 'Diferenciais', href: isPortfolioPage ? '/#diferenciais' : '#diferenciais' },
     { name: 'Para quem somos', href: isPortfolioPage ? '/#resultados' : '#resultados' },
+    { name: 'Portfólio', href: '/portfolio' },
   ];
   const contactHref = isPortfolioPage ? '/#contato' : '#contato';
 

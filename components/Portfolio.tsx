@@ -13,13 +13,6 @@ interface PortfolioProject {
 
 const projects: PortfolioProject[] = [
   {
-    name: 'Caroline Frozza Odonto',
-    category: 'Site institucional',
-    description: 'Experiência digital para harmonização orofacial e odontologia, com foco em confiança e agendamento.',
-    visual: 'ODONTO',
-    color: '#1f8f9b',
-  },
-  {
     name: 'Real Center',
     category: 'Site institucional',
     description: 'Presença digital para varejo, campanhas comerciais e comunicação de uma empresa regional.',
@@ -45,20 +38,6 @@ const projects: PortfolioProject[] = [
     color: '#d15c3f',
     image: '/portfolio/marvet.webp',
     url: 'https://www.marvet.com.br',
-  },
-  {
-    name: 'Analisa Contabilidade',
-    category: 'Site institucional',
-    description: 'Presença digital para contabilidade e assessoria empresarial, com comunicação clara para negócios locais.',
-    visual: 'ANALISA',
-    color: '#1d5fd1',
-  },
-  {
-    name: 'GrafSUL Etiquetas',
-    category: 'Catálogo digital',
-    description: 'Site comercial para apresentar soluções, produtos e atendimento de uma indústria regional.',
-    visual: 'GRAFSUL',
-    color: '#be2457',
   },
   {
     name: 'Gestor Gains',
