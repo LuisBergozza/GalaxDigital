@@ -40,13 +40,6 @@ const projects: PortfolioProject[] = [
     url: 'https://www.marvet.com.br',
   },
   {
-    name: 'Gestor Gains',
-    category: 'Produto digital',
-    description: 'Interface para gestão financeira, clientes, projetos e rotinas de pequenos negócios.',
-    visual: 'GAINS',
-    color: '#3fbd66',
-  },
-  {
     name: 'Galax.Digital',
     category: 'Marca e presença digital',
     description: 'Base da agência e laboratório de soluções digitais para marcas, campanhas e desenvolvimento web.',

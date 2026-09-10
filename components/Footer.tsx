@@ -82,7 +82,7 @@ export const Footer: React.FC<FooterProps> = ({ isLightMode = false }) => {
               <FooterLink href="/#servicos">Nossos Serviços</FooterLink>
               <FooterLink href="/portfolio">Portfólio</FooterLink>
               <FooterLink href="/#diferenciais">Diferenciais</FooterLink>
-              <FooterLink href="/#resultados">Para quem somos</FooterLink>
+              <FooterLink href="/#resultados">Para quem</FooterLink>
               <FooterLink href="/#contato">Fale Conosco</FooterLink>
             </ul>
           </div>
