@@ -78,7 +78,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({ isLightMode }) => {
                   <img
                     src={encodeURI(project.image)}
                     alt={`Prévia do projeto ${project.name}, ${project.category.toLowerCase()}`}
-                    loading="lazy"
+                    loading="eager"
                     decoding="async"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />

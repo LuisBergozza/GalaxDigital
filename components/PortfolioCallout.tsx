@@ -30,7 +30,7 @@ export const PortfolioCallout: React.FC<PortfolioCalloutProps> = ({ isLightMode 
               <p className={`mt-2 max-w-xl text-sm leading-relaxed md:text-base ${isLightMode ? 'text-[#625a6d]' : 'text-gray-400'}`}>Conheça marcas e experiências digitais criadas pela Galax.</p>
             </div>
           </div>
-          <a href="/portfolio" className="shrink-0">
+          <a href="/portfolio/" className="shrink-0">
             <Button size="md" className="group gap-2">
               Ver portfólio
               <ArrowUpRight size={17} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
