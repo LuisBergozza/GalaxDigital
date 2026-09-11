@@ -115,8 +115,8 @@ export const Portfolio: React.FC<PortfolioProps> = ({ isLightMode }) => {
                 ) : (
                   <strong className="relative px-6 text-center text-3xl font-black tracking-[0.12em] text-white drop-shadow-lg transition-transform duration-500 group-hover:scale-110 md:text-5xl">{project.visual}</strong>
                 )}
-                <div className="absolute inset-0 bg-black/20 transition-colors duration-500 group-hover:bg-black/5" />
-                <div className="absolute left-5 right-5 top-5 flex items-center gap-2 border-b border-white/30 pb-3" aria-hidden="true">
+                <div className="pointer-events-none absolute inset-0 bg-black/20 transition-colors duration-500 group-hover:bg-black/5" />
+                <div className="pointer-events-none absolute left-5 right-5 top-5 flex items-center gap-2 border-b border-white/30 pb-3" aria-hidden="true">
                   <span className="h-2.5 w-2.5 rounded-full bg-white/80" />
                   <span className="h-2.5 w-2.5 rounded-full bg-white/50" />
                   <span className="h-2.5 w-2.5 rounded-full bg-white/30" />
