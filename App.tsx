@@ -4,6 +4,7 @@ import { Hero } from './components/Hero';
 import { TrustBar } from './components/TrustBar';
 import { Services } from './components/Services';
 import { Features } from './components/Features';
+import { PortfolioCallout } from './components/PortfolioCallout';
 import { Portfolio } from './components/Portfolio';
 import { Testimonials } from './components/Testimonials';
 import { TargetAudience } from './components/TargetAudience';
@@ -42,6 +43,7 @@ const App: React.FC = () => {
           <TrustBar />
           <Services />
           <Features />
+          <PortfolioCallout />
           {/* <Testimonials /> */}
           <TargetAudience />
           <Contact />

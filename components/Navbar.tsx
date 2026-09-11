@@ -10,11 +10,14 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const isPortfolioPage = window.location.pathname === '/portfolio' || window.location.pathname === '/portfolio/';
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
+
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -31,7 +34,6 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) =>
     };
   }, [isOpen]);
 
-  const isPortfolioPage = window.location.pathname === '/portfolio' || window.location.pathname === '/portfolio/';
   const navLinks = [
     { name: 'Soluções', href: isPortfolioPage ? '/#servicos' : '#servicos' },
     { name: 'Diferenciais', href: isPortfolioPage ? '/#diferenciais' : '#diferenciais' },
@@ -39,13 +41,14 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) =>
     { name: 'Portfólio', href: '/portfolio' },
   ];
   const contactHref = isPortfolioPage ? '/#contato' : '#contato';
+  const hasElevatedSurface = isPortfolioPage || scrolled || isOpen;
 
   return (
     <div className={`fixed top-0 left-0 right-0 z-50 flex justify-center px-4 transition-all duration-500 ${scrolled ? 'pt-2' : 'pt-4 md:pt-6'}`}>
       <nav
         className={`
           relative w-full max-w-5xl transition-all duration-500 ease-in-out
-          ${scrolled || isOpen ? 'bg-[#0A0A0A]/95 backdrop-blur-xl border border-white/10 shadow-[0_0_40px_-10px_rgba(83,0,255,0.3)]' : 'bg-transparent border border-transparent'}
+          ${hasElevatedSurface ? 'bg-[#0A0A0A]/95 backdrop-blur-xl border border-white/10 shadow-[0_0_40px_-10px_rgba(83,0,255,0.3)]' : 'bg-transparent border border-transparent'}
           rounded-2xl
         `}
       >
