@@ -11,4 +11,14 @@
       <image:title>Galax Digital - Agência de Marketing em Concórdia SC</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://galaxdigital.com.br/portfolio</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://galaxdigital.com.br/portfolio/galax-current.webp</image:loc>
+      <image:title>Portfólio Galax Digital</image:title>
+    </image:image>
+  </url>
 </urlset>

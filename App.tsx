@@ -43,7 +43,7 @@ const App: React.FC = () => {
           <TrustBar />
           <Services />
           <Features />
-          <PortfolioCallout />
+          <PortfolioCallout isLightMode={isLightMode} />
           {/* <Testimonials /> */}
           <TargetAudience />
           <Contact />

@@ -61,9 +61,9 @@ export const Portfolio: React.FC<PortfolioProps> = ({ isLightMode }) => {
         <div className="mb-12 flex flex-col gap-5 md:mb-16 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-primary">Trabalhos selecionados / 2023 - atual</p>
-            <h2 className="text-4xl font-bold leading-tight text-white md:text-6xl">
+            <h1 className="text-4xl font-bold leading-tight md:text-6xl">
               <span className={isLightMode ? 'text-[#17131f]' : 'text-white'}>Portfólio</span><span className="text-primary">.</span>
-            </h2>
+            </h1>
           </div>
           <p className={`max-w-md text-base leading-relaxed md:text-right ${isLightMode ? 'text-[#625a6d]' : 'text-gray-400'}`}>
             Sites, marcas e produtos digitais pensados para transformar uma ideia em uma presença online clara, funcional e com personalidade.
@@ -77,7 +77,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({ isLightMode }) => {
                 {project.image ? (
                   <img
                     src={encodeURI(project.image)}
-                    alt={`Prévia do site ${project.name}`}
+                    alt={`Prévia do projeto ${project.name}, ${project.category.toLowerCase()}`}
                     loading="lazy"
                     decoding="async"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -102,7 +102,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({ isLightMode }) => {
                 <h3 className={`mb-3 text-2xl font-bold ${isLightMode ? 'text-[#17131f]' : 'text-white'}`}>{project.name}</h3>
                 <p className={`mb-6 max-w-lg leading-relaxed ${isLightMode ? 'text-[#625a6d]' : 'text-gray-400'}`}>{project.description}</p>
                 {project.url ? (
-                  <a href={project.url} target="_blank" rel="noreferrer" className={`inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:text-primary ${isLightMode ? 'text-[#17131f]' : 'text-white'}`}>
+                  <a href={project.url} target="_blank" rel="noreferrer" className={`inline-flex items-center gap-2 rounded-sm text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 ${isLightMode ? 'text-[#17131f] focus-visible:ring-offset-white' : 'text-white focus-visible:ring-offset-[#0d0d0d]'} hover:text-primary`}>
                     Abrir site <ExternalLink size={15} />
                   </a>
                 ) : (

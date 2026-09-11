@@ -42,13 +42,19 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) =>
   ];
   const contactHref = isPortfolioPage ? '/#contato' : '#contato';
   const hasElevatedSurface = isPortfolioPage || scrolled || isOpen;
+  const elevatedSurfaceClass = isLightMode
+    ? 'bg-white/95 backdrop-blur-xl border border-[#ded8e8] shadow-[0_0_40px_-10px_rgba(83,0,255,0.2)]'
+    : 'bg-[#0A0A0A]/95 backdrop-blur-xl border border-white/10 shadow-[0_0_40px_-10px_rgba(83,0,255,0.3)]';
+  const utilityButtonClass = isLightMode
+    ? 'border-[#ded8e8] bg-[#f7f7fb] text-[#4b4655] hover:bg-purple-500/10 hover:text-primary'
+    : 'border-white/10 bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white';
 
   return (
     <div className={`fixed top-0 left-0 right-0 z-50 flex justify-center px-4 transition-all duration-500 ${scrolled ? 'pt-2' : 'pt-4 md:pt-6'}`}>
       <nav
         className={`
           relative w-full max-w-5xl transition-all duration-500 ease-in-out
-          ${hasElevatedSurface ? 'bg-[#0A0A0A]/95 backdrop-blur-xl border border-white/10 shadow-[0_0_40px_-10px_rgba(83,0,255,0.3)]' : 'bg-transparent border border-transparent'}
+          ${hasElevatedSurface ? elevatedSurfaceClass : 'bg-transparent border border-transparent'}
           rounded-2xl
         `}
       >
@@ -86,7 +92,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) =>
             <button
               type="button"
               onClick={onToggleTheme}
-              className="mr-2 flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-gray-300 transition-colors hover:bg-white/10 hover:text-white"
+              className={`mr-2 flex h-10 w-10 items-center justify-center rounded-lg border transition-colors ${utilityButtonClass}`}
               aria-label={isLightMode ? 'Ativar modo escuro' : 'Ativar modo claro'}
               aria-pressed={isLightMode}
               title={isLightMode ? 'Modo escuro' : 'Modo claro'}
@@ -102,7 +108,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) =>
 
           {/* Mobile Toggle */}
           <button
-            className="md:hidden text-white w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition-colors z-50 relative"
+            className={`md:hidden z-50 relative flex h-10 w-10 items-center justify-center rounded-lg transition-colors ${isLightMode ? 'text-[#17131f] hover:bg-purple-500/10' : 'text-white hover:bg-white/10'}`}
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Menu"
             aria-expanded={isOpen}
@@ -113,13 +119,13 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) =>
 
         {/* Mobile Menu Dropdown */}
         {isOpen && (
-          <div className="md:hidden px-4 pb-6 pt-2 animate-fade-in-down border-t border-white/5 mx-2">
+          <div className={`md:hidden mx-2 animate-fade-in-down border-t px-4 pb-6 pt-2 ${isLightMode ? 'border-[#ded8e8]' : 'border-white/5'}`}>
             <div className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="flex items-center justify-between p-4 text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-all border border-transparent hover:border-white/5 group active:bg-white/10"
+                  className={`group flex items-center justify-between rounded-xl border border-transparent p-4 transition-all ${isLightMode ? 'text-[#4b4655] hover:border-purple-200 hover:bg-purple-500/10 hover:text-primary active:bg-purple-500/15' : 'text-gray-300 hover:border-white/5 hover:bg-white/5 hover:text-white active:bg-white/10'}`}
                   onClick={() => setIsOpen(false)}
                 >
                   <span className="font-medium text-base">{link.name}</span>
@@ -138,7 +144,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isLightMode, onToggleTheme }) =>
               <button
                 type="button"
                 onClick={onToggleTheme}
-                className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 p-4 text-gray-300 transition-colors hover:bg-white/10 hover:text-white"
+                className={`mt-2 flex w-full items-center justify-center gap-2 rounded-xl border p-4 transition-colors ${utilityButtonClass}`}
                 aria-label={isLightMode ? 'Ativar modo escuro' : 'Ativar modo claro'}
                 aria-pressed={isLightMode}
               >
