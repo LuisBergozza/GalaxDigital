@@ -8,7 +8,7 @@ interface PortfolioCalloutProps {
 
 export const PortfolioCallout: React.FC<PortfolioCalloutProps> = ({ isLightMode }) => {
   return (
-    <section className={`relative overflow-hidden py-12 md:py-16 ${isLightMode ? 'bg-[#f7f7fb]' : 'bg-[#0a0a0a]'}`}>
+    <section className={`relative overflow-hidden py-12 md:py-16 ${isLightMode ? 'bg-[#f7f7fb]' : 'bg-[#050505]'}`}>
       <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(83,0,255,0.16),transparent_42%)]" aria-hidden="true" />
       <div className="container relative mx-auto px-6 sm:px-8 md:px-10 lg:px-12">
         <div className={`mx-auto flex max-w-5xl flex-col items-center gap-7 border-y py-8 md:flex-row md:justify-between md:py-9 ${isLightMode ? 'border-[#ded8e8]' : 'border-white/10'}`}>
