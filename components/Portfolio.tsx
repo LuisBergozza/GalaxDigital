@@ -87,7 +87,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({ isLightMode }) => {
               <div className="relative flex aspect-[16/9] items-center justify-center overflow-hidden" style={{ backgroundColor: project.color }}>
                 {project.youtubeId ? (
                   <iframe
-                    src={`https://www.youtube.com/embed/${project.youtubeId}?rel=0&modestbranding=1`}
+                    src={`https://www.youtube.com/embed/${project.youtubeId}?autoplay=1&mute=1&controls=1&playsinline=1&rel=0&modestbranding=1`}
                     title={`Vídeo-case do projeto ${project.name}`}
                     loading="lazy"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
