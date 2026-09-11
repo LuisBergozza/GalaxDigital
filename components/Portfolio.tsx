@@ -87,7 +87,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({ isLightMode }) => {
               <div className={`relative flex items-center justify-center overflow-hidden ${project.youtubeId ? 'aspect-[9/16] md:aspect-[16/9]' : 'aspect-[16/9]'}`} style={{ backgroundColor: project.color }}>
                 {project.youtubeId ? (
                   <iframe
-                    src={`https://www.youtube.com/embed/${project.youtubeId}?autoplay=1&mute=1&controls=1&playsinline=1&rel=0&modestbranding=1`}
+                    src={`https://www.youtube.com/embed/${project.youtubeId}?controls=1&playsinline=1&rel=0&modestbranding=1`}
                     title={`Vídeo-case do projeto ${project.name}`}
                     loading="lazy"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -115,13 +115,17 @@ export const Portfolio: React.FC<PortfolioProps> = ({ isLightMode }) => {
                 ) : (
                   <strong className="relative px-6 text-center text-3xl font-black tracking-[0.12em] text-white drop-shadow-lg transition-transform duration-500 group-hover:scale-110 md:text-5xl">{project.visual}</strong>
                 )}
-                <div className="pointer-events-none absolute inset-0 bg-black/20 transition-colors duration-500 group-hover:bg-black/5" />
-                <div className="pointer-events-none absolute left-5 right-5 top-5 flex items-center gap-2 border-b border-white/30 pb-3" aria-hidden="true">
-                  <span className="h-2.5 w-2.5 rounded-full bg-white/80" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-white/50" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-white/30" />
-                  <span className="ml-auto text-[10px] font-medium uppercase tracking-[0.18em] text-white/70">preview / {String(index + 1).padStart(2, '0')}</span>
-                </div>
+                {!project.youtubeId && (
+                  <>
+                    <div className="pointer-events-none absolute inset-0 bg-black/20 transition-colors duration-500 group-hover:bg-black/5" />
+                    <div className="pointer-events-none absolute left-5 right-5 top-5 flex items-center gap-2 border-b border-white/30 pb-3" aria-hidden="true">
+                      <span className="h-2.5 w-2.5 rounded-full bg-white/80" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-white/50" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-white/30" />
+                      <span className="ml-auto text-[10px] font-medium uppercase tracking-[0.18em] text-white/70">preview / {String(index + 1).padStart(2, '0')}</span>
+                    </div>
+                  </>
+                )}
               </div>
 
               <div className="p-6 md:p-7">
