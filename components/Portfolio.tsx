@@ -84,7 +84,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({ isLightMode }) => {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {projects.map((project, index) => (
             <article key={project.name} className={`group overflow-hidden rounded-2xl border transition-all duration-500 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_24px_70px_-30px_rgba(83,0,255,0.8)] ${isLightMode ? 'border-[#ded8e8] bg-white' : 'border-white/10 bg-[#0d0d0d]'}`}>
-              <div className="relative flex aspect-[16/9] items-center justify-center overflow-hidden" style={{ backgroundColor: project.color }}>
+              <div className={`relative flex items-center justify-center overflow-hidden ${project.youtubeId ? 'aspect-[9/16] md:aspect-[16/9]' : 'aspect-[16/9]'}`} style={{ backgroundColor: project.color }}>
                 {project.youtubeId ? (
                   <iframe
                     src={`https://www.youtube.com/embed/${project.youtubeId}?autoplay=1&mute=1&controls=1&playsinline=1&rel=0&modestbranding=1`}
