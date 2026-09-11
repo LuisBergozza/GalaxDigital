@@ -8,10 +8,21 @@ interface PortfolioProject {
   visual: string;
   color: string;
   image?: string;
+  video?: string;
+  poster?: string;
+  youtubeId?: string;
   url?: string;
 }
 
 const projects: PortfolioProject[] = [
+  {
+    name: 'Case Galax Digital',
+    category: 'Vídeo-case',
+    description: 'Um recorte audiovisual do processo, da estética e das experiências digitais criadas pela Galax.',
+    visual: 'CASE GALAX',
+    color: '#17111f',
+    youtubeId: '6yZMmbKZZp8',
+  },
   {
     name: 'Real Center',
     category: 'Site institucional',
@@ -74,7 +85,26 @@ export const Portfolio: React.FC<PortfolioProps> = ({ isLightMode }) => {
           {projects.map((project, index) => (
             <article key={project.name} className={`group overflow-hidden rounded-2xl border transition-all duration-500 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_24px_70px_-30px_rgba(83,0,255,0.8)] ${isLightMode ? 'border-[#ded8e8] bg-white' : 'border-white/10 bg-[#0d0d0d]'}`}>
               <div className="relative flex aspect-[16/9] items-center justify-center overflow-hidden" style={{ backgroundColor: project.color }}>
-                {project.image ? (
+                {project.youtubeId ? (
+                  <iframe
+                    src={`https://www.youtube.com/embed/${project.youtubeId}?rel=0&modestbranding=1`}
+                    title={`Vídeo-case do projeto ${project.name}`}
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="absolute inset-0 h-full w-full border-0"
+                  />
+                ) : project.video ? (
+                  <video
+                    src={encodeURI(project.video)}
+                    poster={project.poster ? encodeURI(project.poster) : undefined}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    aria-label={`Vídeo-case do projeto ${project.name}`}
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                ) : project.image ? (
                   <img
                     src={encodeURI(project.image)}
                     alt={`Prévia do projeto ${project.name}, ${project.category.toLowerCase()}`}
