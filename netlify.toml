@@ -7,6 +7,11 @@
   to = "/portfolio/index.html"
   status = 200
 
+[[redirects]]
+  from = "/slides"
+  to = "/slides/index.html"
+  status = 200
+
 # Handle Single Page Application routing (redirect all requests to index.html)
 [[redirects]]
   from = "/*"
