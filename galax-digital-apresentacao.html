@@ -356,11 +356,29 @@ h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif;}
         <p class="reveal d4 p-body" style="margin-top:12px;color:var(--white);font-weight:500;">A partir disso, definimos qual estrutura faz sentido pro seu negócio.</p>
       </div>
       <div class="reveal d3" style="position:relative;height:440px;">
-        <svg viewBox="0 0 460 440" style="width:100%;height:100%;">
+        <div style="position:absolute;inset:8px 0;border:1px solid rgba(255,255,255,.1);border-radius:20px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));box-shadow:inset 0 0 0 1px rgba(255,255,255,.025),0 30px 80px rgba(0,0,0,.2);overflow:hidden;">
+          <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:32px 32px;mask-image:radial-gradient(circle at center,black 20%,transparent 80%);"></div>
+          <div style="position:absolute;top:16px;left:18px;font:10px 'Space Grotesk',sans-serif;letter-spacing:.14em;color:#777285;text-transform:uppercase;">Mapa estratégico · 01</div>
+          <div style="position:absolute;top:16px;right:18px;display:flex;align-items:center;gap:6px;font:10px 'Space Grotesk',sans-serif;color:#a566ff;"><span style="width:6px;height:6px;border-radius:50%;background:#a566ff;box-shadow:0 0 12px #a566ff;"></span>conectando sinais</div>
+        </div>
+        <svg viewBox="0 0 460 440" style="position:relative;width:100%;height:100%;">
+          <defs>
+            <radialGradient id="strategyCore" cx="35%" cy="28%" r="75%">
+              <stop offset="0%" stop-color="#d7bfff"/>
+              <stop offset="38%" stop-color="#a566ff"/>
+              <stop offset="100%" stop-color="#7200ff"/>
+            </radialGradient>
+            <filter id="strategyGlow"><feGaussianBlur stdDeviation="8" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
           <g id="convergeLines"></g>
-          <circle cx="230" cy="220" r="54" fill="#7200FF" opacity="0.9"/>
-          <circle cx="230" cy="220" r="54" fill="none" stroke="#A566FF" stroke-width="1" opacity="0.5"><animate attributeName="r" values="54;80;54" dur="3.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0;0.5" dur="3.5s" repeatCount="indefinite"/></circle>
-          <text x="230" y="226" text-anchor="middle" fill="#fff" font-size="12" font-family="Space Grotesk">seu site</text>
+          <circle cx="230" cy="220" r="116" fill="none" stroke="#a566ff" stroke-width="1" stroke-dasharray="2 10" opacity=".28"><animateTransform attributeName="transform" type="rotate" from="0 230 220" to="360 230 220" dur="24s" repeatCount="indefinite"/></circle>
+          <circle cx="230" cy="220" r="78" fill="none" stroke="#7200ff" stroke-width="1" opacity=".42"/>
+          <circle cx="230" cy="220" r="58" fill="#7200ff" opacity=".22" filter="url(#strategyGlow)"/>
+          <circle cx="230" cy="220" r="52" fill="url(#strategyCore)"/>
+          <circle cx="230" cy="220" r="52" fill="none" stroke="#d7bfff" stroke-width="1" opacity=".7"/>
+          <path d="M214 220h32M230 204v32" stroke="#fff" stroke-width="1" opacity=".45"/>
+          <text x="230" y="218" text-anchor="middle" fill="#fff" font-size="12" font-weight="600" font-family="Space Grotesk">seu site</text>
+          <text x="230" y="234" text-anchor="middle" fill="#f0eaff" font-size="9" font-family="Space Grotesk" opacity=".8">estrutura central</text>
         </svg>
         <div id="convergeLabels"></div>
       </div>
