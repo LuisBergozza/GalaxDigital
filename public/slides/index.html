@@ -408,7 +408,7 @@ h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif;}
           <div style="height:260px;background:#fff;position:relative;overflow:hidden;"><img src="/Imagens%20slides/Realcenter%20computador.png" alt="Site do Real Center no computador" style="display:block;width:100%;height:100%;object-fit:cover;object-position:top center;"></div>
         </div>
         <div class="device-phone" style="position:absolute;bottom:-20px;right:0;">
-          <div class="screen" style="background:#fff;"><img src="/Imagens%20slides/Realcenter%20celular.png" alt="Site do Real Center no celular" style="display:block;width:100%;height:100%;object-fit:cover;object-position:top center;"></div>
+          <div class="screen" style="background:#fff;"><img src="/Imagens%20slides/Realcenter%20celular.png" alt="Site do Real Center no celular" style="display:block;width:100%;height:100%;object-fit:contain;object-position:top center;"></div>
         </div>
         <a href="https://www.realcenterconcordia.com.br" target="_blank" rel="noreferrer" style="position:absolute;right:8px;bottom:-48px;color:#4a4856;font:600 12px 'Space Grotesk',sans-serif;text-decoration:none;border-bottom:1px solid rgba(74,72,86,.35);">Real Center - Exemplo de case ↗</a>
       </div>
@@ -452,14 +452,24 @@ h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif;}
           <span class="chip">Mobile-first</span>
         </div>
       </div>
-      <div class="reveal d4" style="display:flex;flex-direction:column;gap:26px;">
-        <div>
-          <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--grey);margin-bottom:8px;"><span>Tempo de carregamento</span><span id="loadStat">0.0s</span></div>
-          <div style="height:8px;background:#221f2b;border-radius:100px;overflow:hidden;"><div id="loadBar" style="height:100%;width:0%;background:linear-gradient(90deg,#7200FF,#A566FF);border-radius:100px;"></div></div>
-        </div>
-        <div>
-          <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--grey);margin-bottom:8px;"><span>Performance score</span><span id="perfStat">0</span></div>
-          <div style="height:8px;background:#221f2b;border-radius:100px;overflow:hidden;"><div id="perfBar" style="height:100%;width:0%;background:linear-gradient(90deg,#7200FF,#A566FF);border-radius:100px;"></div></div>
+      <div class="reveal d4" style="display:flex;align-items:center;justify-content:center;">
+        <div style="width:min(100%,560px);background:#fff;color:#202124;border:1px solid #dfe1e5;border-radius:10px;box-shadow:0 28px 70px rgba(0,0,0,.28);overflow:hidden;font-family:Arial,sans-serif;">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:15px 20px;border-bottom:1px solid #e5e7eb;">
+            <div><div style="font-size:11px;color:#5f6368;margin-bottom:4px;">PageSpeed Insights · mobile</div><div style="font-size:15px;font-weight:600;color:#202124;">galax.digital</div></div>
+            <span style="font-size:11px;color:#087f51;background:#e4f8ee;border-radius:999px;padding:6px 10px;font-weight:600;">Excelente</span>
+          </div>
+          <div style="display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:center;padding:22px 20px 18px;">
+            <div style="text-align:center;"><div style="width:106px;height:106px;margin:0 auto 10px;border:7px solid #00c875;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:34px;color:#00a866;">98</div><div style="font-size:12px;color:#202124;">Performance</div></div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:12px;color:#5f6368;margin-bottom:7px;"><span>Tempo de carregamento</span><strong id="loadStat" style="font-size:19px;color:#00a866;">0,7 s</strong></div>
+              <div style="height:8px;background:#e4f8ee;border-radius:100px;overflow:hidden;margin-bottom:17px;"><div id="loadBar" style="height:100%;width:0%;background:#00c875;border-radius:100px;"></div></div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                <div style="border-top:1px solid #e5e7eb;padding-top:9px;"><div style="font-size:10px;color:#5f6368;">Bloqueio total</div><strong style="font-size:18px;color:#00a866;">0 ms</strong></div>
+                <div style="border-top:1px solid #e5e7eb;padding-top:9px;"><div style="font-size:10px;color:#5f6368;">Layout shift</div><strong style="font-size:18px;color:#00a866;">0.001</strong></div>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;padding:0 20px 18px;flex-wrap:wrap;"><span style="font-size:10px;color:#087f51;background:#e4f8ee;border-radius:999px;padding:6px 9px;">FCP 0,7 s</span><span style="font-size:10px;color:#087f51;background:#e4f8ee;border-radius:999px;padding:6px 9px;">LCP 0,7 s</span><span style="font-size:10px;color:#087f51;background:#e4f8ee;border-radius:999px;padding:6px 9px;">Mobile-first</span></div>
         </div>
       </div>
     </div>
@@ -757,22 +767,18 @@ function getClosestIdx(){
   return best;
 }
 
-// ---------- performance bars (slide 7) ----------
+// ---------- performance panel (slide 6) ----------
 let perfDone = false;
 function runPerfBars(){
   if(perfDone) return; perfDone = true;
   const loadBar = document.getElementById('loadBar');
-  const perfBar = document.getElementById('perfBar');
   const loadStat = document.getElementById('loadStat');
-  const perfStat = document.getElementById('perfStat');
   let t = 0;
   const dur = 1400, start = performance.now();
   function step(now){
     const p = Math.min(1, (now-start)/dur);
-    loadBar.style.width = (p*92) + '%';
-    perfBar.style.width = (p*98) + '%';
-    loadStat.textContent = (1.2 - p*1.0).toFixed(1) + 's';
-    perfStat.textContent = Math.round(p*98);
+    loadBar.style.width = (p*100) + '%';
+    loadStat.textContent = (1.4 - p*0.7).toFixed(1).replace('.', ',') + ' s';
     if(p < 1) requestAnimationFrame(step);
   }
   requestAnimationFrame(step);
