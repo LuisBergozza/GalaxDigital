@@ -796,25 +796,6 @@ function runConverge(){
   });
 }
 
-// ---------- orbit animation (slide 1) ----------
-(function orbit(){
-  const svg = document.getElementById('orbit-svg');
-  if(!svg) return;
-  const d1 = document.getElementById('orbitDot1');
-  const d2 = document.getElementById('orbitDot2');
-  const d3 = document.getElementById('orbitDot3');
-  const cx = 250, cy = 260;
-  let t = 0;
-  function frame(){
-    t += 0.006;
-    d1.setAttribute('transform', `translate(${cx + 150*Math.cos(t)}, ${cy + 150*Math.sin(t)*0.92})`);
-    d2.setAttribute('transform', `translate(${cx + 205*Math.cos(-t*0.7+1)}, ${cy + 205*Math.sin(-t*0.7+1)*0.92})`);
-    d3.setAttribute('transform', `translate(${cx + 150*Math.cos(t*1.4+3)}, ${cy + 150*Math.sin(t*1.4+3)*0.92})`);
-    requestAnimationFrame(frame);
-  }
-  frame();
-})();
-
 // ---------- particle field (slide 1) ----------
 (function particles(){
   const canvas = document.getElementById('particles');
